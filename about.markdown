@@ -3,66 +3,25 @@ layout: page
 title: About
 permalink: /about/
 ---
+<br><br><br>
 
-## Static page
-This is an example of the bare static page. No borders and headers are rendered.
+컴퓨터공학을 전공하고, QA&QG, 인공지능 챗봇 프로젝트 등 AI NLP 분야의 프로젝트에 참여하며 연구하고 있습니다. '가보지 않는 길을 두려워하지 않는다'는 정신을 추구하고 배우고 도전하기를 좋아합니다. 😄
 
-You can use **all** the features of the post, such as *formatting*, *lightbox* and *buttons*. See below.
+<br><br>
 
-## Formatting
-### Lorem ipsum
-***Lorem ipsum dolor sit amet***, consectetuer adipiscing elit. *Aliquam* ante. Nam libero tempore, **cum** soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. 
+## My Skill Set  
+<div>  
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/tensorflow-icon.svg" alt="TensorFlow" height="50" />  
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/keras.png" alt="Keras" height="50" />  
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/pytorch-icon.svg" alt="pytorch" height="50" />  
 
-### Lists
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="Python" height="50" />  
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/cplusplus-original.svg" alt="C++" height="50" />  
 
-- Nullam sapien sem, 
-- ornare ac, 
-- nonummy non, 
-- lobortis a enim. 
 
-1. Duis condimentum augue.
-2. Id magna semper rutrum. 
-3. Pellentesque arcu. 
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/django-original.svg" alt="Django" height="50" />  
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/mongodb-original-wordmark.svg" alt="MongoDB" height="50" />  
 
-### Tables
-
-| Very | Simple | Table|
-|------|--------|------|
-|Col 1  | Col 2  | Col 3|
-
-## Buttons
-<div class='sx-button'>
-  <a href='https://www.example.com/' class='sx-button__content red'>
-    <img src='/assets/img/icons/info.svg'/>Show info
-  </a>
-</div>
-<div class='sx-button'>
-  <a href='https://www.example.com/' class='sx-button__content green'>
-    <img src='/assets/img/icons/down_arrow.svg'/>Download all Shrek movies
-  </a>
-</div>
-<div class='sx-button'>
-  <a href='https://github.com/andreondra/jekyll-theme-simplex' class='sx-button__content blue'>
-    <img src='/assets/img/icons/simplex.svg'/>Github
-  </a>
-</div>
-
-## Code snippets
-
-{% highlight bash %}
-echo "Backing up Apache..." >>"$LOG_FILE" 2>&1
-backupVerify "/var/web" "/web"
-STATUS_WWW="$?"
-{% endhighlight %}
-
-## Pictures
-<div class="sx-center">
-    <div class="sx-picture">
-    <a href="/assets/img/posts/doggo2.jpg" data-lity>
-        <img src="/assets/img/posts/doggo2_thumb.jpg"/>
-    </a>
-    <span class="sx-subtitle">Doggo picture</span>
-    </div>
-</div>
-
-The dog picture by: [Marliese Streefland](https://unsplash.com/photos/2l0CWTpcChI).
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/amazonwebservices-original-wordmark.svg" alt="AWS" height="50" />  
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="Docker" height="50" />  
+</div>  

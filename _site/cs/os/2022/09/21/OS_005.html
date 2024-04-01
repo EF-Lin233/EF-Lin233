@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
+<link rel="stylesheet" href="/assets/style.css"/>
+<link rel="stylesheet" href="/assets/js/lity.min.css"/>
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:site_name" content="pino's blog" />
+<meta 
+    property="og:title"
+    content="
+        
+            분산 및 병렬 처리 시스템
+        
+    " 
+/>
+
+<meta property="og:url" content="//cs/os/2022/09/21/OS_005.html" />
+
+    <meta property="og:type" content="article" />
+
+
+
+    <meta property="fb:app_id" content="" />
+
+
+
+<title>
+    
+        분산 및 병렬 처리 시스템
+    
+</title>
+</head>
+<body class="index">
+
+    <header class="header">
+<!-- logo image
+    <section class="logo">
+        <a href="/" class="logo__link">
+            
+                <h1>pino's blog</h1>
+            
+        </a>
+    </section>
+-->
+    <button id="menuToggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+    <nav class="menu">
+        
+<ul class="list primary">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/">
+                
+                
+                    <p>HOME</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/cs.html">
+                
+                
+                    <p>CS</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/os.html">
+                
+                
+                    <p>OS</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/net.html">
+                
+                
+                    <p>Net</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/db.html">
+                
+                
+                    <p>DB</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ds.html">
+                
+                
+                    <p>자료구조</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ai.html">
+                
+                
+                    <p>AI</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ml_interview.html">
+                
+                
+                    <p>The Quest for Machine Learning</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch1.html">
+                
+                
+                    <p>ch1 피처 엔지니어링</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch2.html">
+                
+                
+                    <p>ch2 모델평가</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch3.html">
+                
+                
+                    <p>ch3 클래식 알고리즘</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch4.html">
+                
+                
+                    <p>ch4 차원축소</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch5.html">
+                
+                
+                    <p>ch5 비지도학습</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch6.html">
+                
+                
+                    <p>ch6 확률 그래프 모델</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch7.html">
+                
+                
+                    <p>ch7 최적화 알고리즘</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/etc.html">
+                
+                
+                    <p>ETC</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/about/index.html">
+                
+                
+                    <p>About</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+    </nav>
+</header>
+
+    <article class="post">
+
+    <div class="post__title">
+        <h1 class="post__title__text">분산 및 병렬 처리 시스템</h1>
+    </div>
+    <div class="post__meta"> 
+        <div class="post__meta__category">
+            
+                <p class="post__meta__category__title" style="background: ">CS</p>
+            
+                <p class="post__meta__category__title" style="background: ">OS</p>
+            
+        </div>
+        <p class="post__meta__divider">·</p>
+        <div class="post__meta__date">
+            September 21, 2022
+        </div>
+        
+            
+            <p class="post__meta__divider">·</p>
+            <div class="post__meta__author">
+                <p>by </p>
+                <img class="post__meta__author__photo" src="/assets/img/authors/jekyll.png"/>
+                <p>Songhee Lee</p>
+            </div>
+        
+    </div>
+
+    
+        <div class="post__navigator">
+            <div
+                class="post__navigator__buttons"
+                
+            >
+                
+                    <a href="_posts/2022-09-21-OS_004.md">
+                        <img  class="arrow-left" src="/assets/img/icons/arrow_left.svg"/>
+                        Previous
+                    </a>
+                
+                
+            </div>
+        </div>
+    
+
+    <div class="post__content">
+        <h1 id="들어가기-전에">들어가기 전에</h1>
+
+<p>분산 시스템은 PC가 보급되고 인터넷이 활성화되면서 개념이 생겨났다.</p>
+
+<ul>
+  <li>
+    <p>병렬 처리 (Parallel Processing) : 하나 이상의 연산을 동시에 수행해 연산 속도를 증가시키는 방법</p>
+  </li>
+  <li>
+    <p>분산 시스템 : 여러 개의 컴퓨터가 동일한 태스크를 처리하기 위해 네트워크 상에서 서로 통신하며 협력하는 것</p>
+
+    <p>예) 거대 웹사이트 저장소, P2P 파일 공유 등</p>
+  </li>
+  <li>병렬처리 시스템은 프로세서를 늘려서 <code class="language-plaintext highlighter-rouge">여러 일을 동시에</code>, 더 빨리 처리 할 수 있게 해주는 시스템
+    <ul>
+      <li>병렬처리는 “동시에 여러 일”을 처리하는 것</li>
+    </ul>
+  </li>
+  <li>분산처리 시스템은 하나의 컴퓨터 시스템이 처리 또는 제어하고 있던 기능을 <code class="language-plaintext highlighter-rouge">여러 개의 컴퓨터 시스템에 분산하여 처리</code>하는 것.
+    <ul>
+      <li>분산처리는 “하나의 일을 동시에 여럿이서” 처리하는 것</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h1 id="네트워크-컴퓨터-구성프로세서의-결합도">네트워크 컴퓨터 구성(프로세서의 결합도)</h1>
+
+<ul>
+  <li>네트워크란 서로 독립된 시스템이 빠른 통신 채널을 이용해 상호 통신할 수 있도록 지원하는 시스템이다.</li>
+  <li>컴퓨터로 처리해야 할 업무의 비중에 맞는 중소형 컴퓨터 여러 대를 구축하고 이들 컴퓨터를 네트워크로 연결해서 사용한다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="1-강결합-시스템병렬-처리-시스템">1. 강결합 시스템(병렬 처리 시스템)</h2>
+
+<blockquote>
+  <p>Tightly Coupled System</p>
+</blockquote>
+
+<ul>
+  <li>여러개의 프로세서가 하나의 메모리를 공유하는 <code class="language-plaintext highlighter-rouge">다중 프로세서(Multi-processor)</code> 구조</li>
+  <li>프로세서들이 메모리를 공유, <code class="language-plaintext highlighter-rouge">프로세서간 통신은 공유 메모리</code>를 통해 이루어짐</li>
+  <li>공유 메모리를 차지하려는 프로세서 간의 경쟁 최소화가 주요 고려 대상</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>이러한 단일 프로세서 컴퓨터에 병렬기법 도입하여 운영체제를 단일 컴퓨터의 운영에서 벗어나 <code class="language-plaintext highlighter-rouge">여러 작업을 동시에</code> 처리 할 수 있게하는 병렬처리 시스템이 나타나게 되었다.</li>
+  <li>병렬처리 시스템은 <code class="language-plaintext highlighter-rouge">컴퓨터를 병렬로 연결</code>하거나, <code class="language-plaintext highlighter-rouge">CPU등을 병렬로 연결</code>하여 <code class="language-plaintext highlighter-rouge">다수의 프로세서</code>들이 <code class="language-plaintext highlighter-rouge">다수의 프로그램들을 분담</code>하여 <code class="language-plaintext highlighter-rouge">동시에 처리</code>하는 방식</li>
+  <li>예시: 한글워드 프로세서를 사용하면서 윈도미디어 플레이어로 음악을 듣고 동시에 메신져를 켜놓을 수 있는 것</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">멀티 태스킹</code>, <code class="language-plaintext highlighter-rouge">컬티 프로세싱</code>, <code class="language-plaintext highlighter-rouge">멀티 스레딩</code>이 이에 해당한다.</li>
+</ul>
+
+<h3 id="프로세싱-기법에-따른-구분">프로세싱 기법에 따른 구분</h3>
+
+<h4 id="asymmetric-multiprocessing">Asymmetric multiprocessing</h4>
+
+<ul>
+  <li>하나의 master 프로세스가 다른 프로세스들을 관리감독하는 형태</li>
+  <li>master 프로세서가 <code class="language-plaintext highlighter-rouge">Load balancing</code>을 다 결정한다.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="symmetric-multiprocessing-smp">Symmetric multiprocessing (SMP)</h4>
+
+<ul>
+  <li>각각의 프로세스가 동등한 권한으로 프로세싱하는 형태</li>
+  <li><strong>각각의 프로세서는 각자 스케줄링을 진행한다.</strong></li>
+  <li>프로세스들은 하나의 ready queue에 저장되어있거나, 각각의 프로세서의 private queue에 저장되어있다.</li>
+  <li>대부분의 멀티프로세스가 이러한 형태.</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/75410527/191070474-e347b64c-7946-4f62-8544-538c7cc98d61.png" alt="스크린샷 2022-09-20 오전 1 43 16" /></p>
+
+<p><br /><br /></p>
+
+<h3 id="메모리-접근에-따른-구분">메모리 접근에 따른 구분</h3>
+
+<h4 id="uniform-memory-access">Uniform Memory Access</h4>
+
+<ul>
+  <li>하나의 공유된 메모리에 여러개의 프로세서가 할당된 형태.</li>
+  <li>하나의 메모리를 공유하여 사용한다.</li>
+  <li>프로세서가 어느 메모리를 참조하든 접근속도가 동일하다</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="non-uniform-memory-access-numa">Non-Uniform Memory Access (NUMA)</h4>
+
+<ul>
+  <li>
+    <p>각각의 CPU가 로컬 메모리를 가져 동시에 여러 작업을 진행할 수 있다.</p>
+
+    <p>물리 주소의 일정 부분을 로컬 메모리로 사용할 수 있도록 배정한다.</p>
+  </li>
+  <li>
+    <p>만약 다른 프로세서에서 자신의 메모리를 참조할 때 속도가 느리므로, 스케줄링 시 이를 고려해주어야 한다.</p>
+  </li>
+  <li>
+    <p>이 때 필요한 개념이 Affinity 이다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="processor-affinity">Processor Affinity</h4>
+
+<blockquote>
+  <p>프로세스 스케줄링 시에, 특정 프로세서에 지정을 해주는것.</p>
+
+  <p>프로세스는 특정 프로세서에서만 실행되게 된다.</p>
+
+  <p>이전에 이 프로세스를 이 CPU에서 실행한 적이 있다면 해당 코드의 일부가 캐시에 담겨져 있을 가능성이 높으니 이전에 실행했던 CPU를 선택하게 된다.</p>
+</blockquote>
+
+<ul>
+  <li>프로세스는 현재 돌고있는 프로세서의 메모리에 address space등의 메모리를 차지할 것이다. (NUMA의 경우)</li>
+  <li>이 때, 다른 프로세서의 메모리에 있는 데이터를 참조한다면, 시간이 오래걸릴것이다.</li>
+  <li>따라서 자신이 현재 돌고있는 프로세서의 메모리와, 자신이 접근하려는 데이터가 있는 메모리를 같도록 만들어줄 때 Processor Affinity를 활용하기도 한다.
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">soft Affinity</code>: 같은 프로세서에서 돌 수 있도록 priority를 높여주는 등 노력은 하지만, 보장은 안되는 경우.</li>
+      <li><code class="language-plaintext highlighter-rouge">hard Affinity</code>: 특정 프로세서에만 돌도록 완전히 보장시켜주는 경우.</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="load-balancing">Load balancing</h4>
+
+<blockquote>
+  <p>특정 프로세서(CPU)가 너무 많은 프로세스를 돌린다 싶으면, 스케줄러가 적절히 분배해주는 행위.<br />
+CPU마다 utilization을 체크해서 바쁜 쪽의 일을 덜 바쁜 쪽으로 가지고 와 수행하게 된다.</p>
+</blockquote>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">processor Affinity</code> 등에 의해 특정 프로세서가 너무 많은 프로세스를 돌리는 경우에, 스케줄러가 적절히 분배해주는 것을 load balancing이라 한다.</li>
+  <li>앞서 말했듯이 <code class="language-plaintext highlighter-rouge">Asymmetric multiprocessor</code>에서는 <code class="language-plaintext highlighter-rouge">master</code> 프로세서가 load balancing 해준다.
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">Push migration</code>: 바쁜 프로세서가 자기의 일을 던지는 것.</li>
+      <li><code class="language-plaintext highlighter-rouge">Pull migration</code>: 노는 프로세서가 다른 일 가져오는 것.</li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="장단점">장단점</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>장점</th>
+      <th>단점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>경제적이다</td>
+      <td>프로세서 수가 많아질수록 프로세서 간 데이터 교환에 따른 오버헤드도 증가</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>처리량이 높다(High Throughput)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>신뢰성이 높다. 하나의 CPU가 고장나더라도 다른 CPU가 일을 수행할 수 있다</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="2-약결합-시스템분산-처리-시스템">2. 약결합 시스템(분산 처리 시스템)</h2>
+
+<blockquote>
+  <p>Loosely Coupled System</p>
+</blockquote>
+
+<ul>
+  <li>두 개 이상의 독립된 컴퓨터 시스템이 <code class="language-plaintext highlighter-rouge">통신망을 통하여 연결</code>된 시스템(분산처리 시스템으로 알려짐)</li>
+  <li>각 시스템마다 <code class="language-plaintext highlighter-rouge">독자적인 운영체제, 메모리, 입출력장치</code>를 가지고 <code class="language-plaintext highlighter-rouge">독립적으로 운영</code>됨</li>
+  <li>프로세서 간의 통신은 <code class="language-plaintext highlighter-rouge">메시지 전달</code>이나 <code class="language-plaintext highlighter-rouge">원격 프로시저 호출</code>을 통해서 이루어짐</li>
+  <li>자원을 가지고 있는 사이트는 <code class="language-plaintext highlighter-rouge">서버(server)</code>가 되며, 반면 다른 사이트에서의 <code class="language-plaintext highlighter-rouge">클라이언트(client)</code>나 사용자는 그 자원을 사용</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/75410527/191037669-e2661ceb-205e-4ced-8466-6ad1d06f94b0.png" alt="DistributedSys2" /></p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h4 id="특징">특징</h4>
+
+<ul>
+  <li>분산 시스템의 등장은 개인용 컴퓨터가 보급되면서 <code class="language-plaintext highlighter-rouge">인터넷이 활성화되기 시작</code>하고 분산 시스템의 개념이 나온다.</li>
+  <li>분산처리 시스템은 <code class="language-plaintext highlighter-rouge">대형 메인 프레임 컴퓨터</code>를 사용하는 것보다 <code class="language-plaintext highlighter-rouge">개인용 컴퓨터를 여러 개</code> 사용하여 하나로 묶어 대형 컴퓨터에 버금가는 시스템을 만드는 것</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>LAN 같은 네트워크 인프라를 필요로 한다.</li>
+  <li>구조는 클라이언트 - 서버로 되어있다.</li>
+</ul>
+
+<p><img width="900" alt="스크린샷 2022-09-19 오후 10 37 13" src="https://user-images.githubusercontent.com/75410527/191030512-ca002929-577b-458f-b66e-5dc0d81413c5.png" /></p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h3 id="분산-시스템의-고려-사항">분산 시스템의 고려 사항</h3>
+
+<ul>
+  <li>
+    <p>Transparency(투명성) : 유저 입장에서 Single computer system으로 제공</p>
+
+    <p>=&gt; 어떤 시스템을 통해 접근하더라도 똑같은 인터페이스를 제공하기</p>
+  </li>
+  <li>
+    <p>Scalability (확장성) : A system is scalable if it operate effectively at many different scales.</p>
+
+    <p>=&gt; 유저가 많아지면 많아지는 대로, 적어지면 적어지는 대로 규모를 효율적으로 사용하는 것</p>
+  </li>
+  <li>
+    <p>Concurrency (일관성) : 각 task들의 동시에 접근할 때, 각 자원들의 상태가 동일해야 한다.</p>
+  </li>
+  <li>
+    <p>Failure Handling : 일부 컴퓨터들이 고장 난다 하더라도 그 시스템이 계속해서 사용자에게 일관성 있는 컴퓨팅 서비스를 제공할 수 있어야 한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>분산 컴퓨팅 환경 실현하기 위해서는 아래와 같은 기술이 필요하다.
+    <ul>
+      <li>복수의 컴퓨터상의 프로그램 간 통신을 위한 원격 절차 호출(<code class="language-plaintext highlighter-rouge">RPC</code>)</li>
+      <li>분산 파일 시스템(distributed file system)</li>
+      <li>디렉터리 서비스(directory service) : 쿼리를 이용한 검색기능 제공</li>
+      <li><code class="language-plaintext highlighter-rouge">인증 서비스(authentication service)</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="장점단점">장점/단점</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>장점</th>
+      <th>단점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>분산 처리를 통한 빠른 데이터 처리 속도(<code class="language-plaintext highlighter-rouge">연산 속도 향상</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">보안/통신 관리</code>가 복잡</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>동시에 수행 가능한 시스템 환경이 제공되므로 연산 속도 향상</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>한 사이트에 있는 자원을 다른 사이트가 이용할 수 있어서 자원 활용도 향상(<code class="language-plaintext highlighter-rouge">자원 공유</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">네트워크 리소스</code>가 많이 필요</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>데이터 손실에 대비한 장애 허용성 증가(<code class="language-plaintext highlighter-rouge">신뢰성이 높다</code>)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>하나의 시스템에 오류가 발생해도 시스템 전체의 성능에는 크게 영향을 주지 않는 신뢰성 제공</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>다수의 사이트 간에 의견 교환 가능(<code class="language-plaintext highlighter-rouge">통신</code>)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>서버가 물리적으로 떨어져 있어도 사용할 수 있다. (은행 서버의 경우 하나는 서울에, 다른 하나는 부산에)</td>
+      <td>유지 보수가 어려울 수 있다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><br /><br /><br /></p>
+
+<h1 id="추가">추가</h1>
+
+<h3 id="hadoop">HADOOP</h3>
+
+<ul>
+  <li>분산 컴퓨팅을 위한 오픈소스 소프트웨어</li>
+  <li>클러스터 상 분산 저장되어 있는 대용량 데이터셋을 대상으로 분산처리를 가능하게 한다.</li>
+  <li>물리적으로는 다 다른 서버지만 하둡이라는 소프트웨어를 깔면 마치 하나의 서버처럼 작동하도록 만드는 것</li>
+  <li>HDFS에 데이터를 저장하고, YARN으로 리소스를 관리하고 MapReduce로 데이터를 처리한다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>https://jihyeong-ji99hy99.tistory.com/102?category=889831</li>
+  <li>
+    <p>https://losskatsu.github.io/os-kernel/dist-sys-concept01/#%EB%B6%84%EC%82%B0-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EA%B0%9C%EB%85%901</p>
+  </li>
+  <li>https://yeon-code.tistory.com/31</li>
+</ul>
+
+    </div>
+</article>
+
+    
+    <footer class="footer">
+        <section class="footer__about">
+                <p class="footer__about__copyright">Pino 2022</p>
+                
+                <span class="divider">·</span>
+                
+                <span class="footer__about__theme">
+                <p>by <a href="https://songhee-lee.github.io">songhee</a></p></span>
+        </section>
+</footer>
+    
+    <script src="/assets/js/jquery.slim.min.js"></script>
+<script src="/assets/js/lity.min.js"></script>
+<script src="/assets/js/tools.js"></script>
+</body>
+</html>

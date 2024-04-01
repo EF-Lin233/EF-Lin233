@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
+<link rel="stylesheet" href="/assets/style.css"/>
+<link rel="stylesheet" href="/assets/js/lity.min.css"/>
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:site_name" content="pino's blog" />
+<meta 
+    property="og:title"
+    content="
+        
+            쿠키, 세션, JWT, 캐시
+        
+    " 
+/>
+
+<meta property="og:url" content="//cs/net/2022/10/22/Net_005.html" />
+
+    <meta property="og:type" content="article" />
+
+
+
+    <meta property="fb:app_id" content="" />
+
+
+
+<title>
+    
+        쿠키, 세션, JWT, 캐시
+    
+</title>
+</head>
+<body class="index">
+
+    <header class="header">
+<!-- logo image
+    <section class="logo">
+        <a href="/" class="logo__link">
+            
+                <h1>pino's blog</h1>
+            
+        </a>
+    </section>
+-->
+    <button id="menuToggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+    <nav class="menu">
+        
+<ul class="list primary">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/">
+                
+                
+                    <p>HOME</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/cs.html">
+                
+                
+                    <p>CS</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/os.html">
+                
+                
+                    <p>OS</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/net.html">
+                
+                
+                    <p>Net</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/db.html">
+                
+                
+                    <p>DB</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ds.html">
+                
+                
+                    <p>자료구조</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ai.html">
+                
+                
+                    <p>AI</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ml_interview.html">
+                
+                
+                    <p>The Quest for Machine Learning</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch1.html">
+                
+                
+                    <p>ch1 피처 엔지니어링</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch2.html">
+                
+                
+                    <p>ch2 모델평가</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch3.html">
+                
+                
+                    <p>ch3 클래식 알고리즘</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch4.html">
+                
+                
+                    <p>ch4 차원축소</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch5.html">
+                
+                
+                    <p>ch5 비지도학습</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch6.html">
+                
+                
+                    <p>ch6 확률 그래프 모델</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch7.html">
+                
+                
+                    <p>ch7 최적화 알고리즘</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/etc.html">
+                
+                
+                    <p>ETC</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/about/index.html">
+                
+                
+                    <p>About</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+    </nav>
+</header>
+
+    <article class="post">
+
+    <div class="post__title">
+        <h1 class="post__title__text">쿠키, 세션, JWT, 캐시</h1>
+    </div>
+    <div class="post__meta"> 
+        <div class="post__meta__category">
+            
+                <p class="post__meta__category__title" style="background: ">CS</p>
+            
+                <p class="post__meta__category__title" style="background: ">Net</p>
+            
+        </div>
+        <p class="post__meta__divider">·</p>
+        <div class="post__meta__date">
+            October 22, 2022
+        </div>
+        
+            
+            <p class="post__meta__divider">·</p>
+            <div class="post__meta__author">
+                <p>by </p>
+                <img class="post__meta__author__photo" src="/assets/img/authors/jekyll.png"/>
+                <p>Songhee Lee</p>
+            </div>
+        
+    </div>
+
+    
+        <div class="post__navigator">
+            <div
+                class="post__navigator__buttons"
+                
+            >
+                
+                    <a href="_posts/2022-09-28-Net_004.md">
+                        <img  class="arrow-left" src="/assets/img/icons/arrow_left.svg"/>
+                        Previous
+                    </a>
+                
+                
+            </div>
+        </div>
+    
+
+    <div class="post__content">
+        <h1 id="tldr">TL;DR</h1>
+
+<p>아래 4개는 웹의 대표적인 저장소이다. <br /></p>
+
+<ul>
+  <li>쿠키 : HTTP의 <code class="language-plaintext highlighter-rouge">비연결성(Connectionless)</code>과 <code class="language-plaintext highlighter-rouge">비상태성(Stateless)</code> 특성을 보완하기 위한 방법
+    <ul>
+      <li>웹 사이트에 접속할 때 <strong>서버에서 생성</strong>하여 <strong>사용자 브라우저에 정보를 담는 임시 파일</strong></li>
+    </ul>
+  </li>
+  <li>세션 : 쿠키의 트래픽 문제와 보안 이슈를 해결하기 위해 등장
+    <ul>
+      <li>정보(세션 id 등)를 서버에 저장하고, 브라우저를 닫을 때 소멸</li>
+    </ul>
+  </li>
+  <li>JWT : 인증에 필요한 정보들을 암호화시킨 토큰
+    <ul>
+      <li>보안 문제로 Access Token과 Refresh Token 사용</li>
+      <li>성능과 사용 편의성 그리고 보안성을 적절히 타협한 방식</li>
+    </ul>
+  </li>
+  <li>웹 캐시 : 리소스 파일의 임시 저장소
+    <ul>
+      <li>같은 자원을 사용할 때 일일이 불러오지 않고 캐시되어 있는 자원을 사용하여 <strong>전송량은 줄이고 속도는 높이는 방법</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="쿠키와-세션의-차이">쿠키와 세션의 차이</h4>
+
+<ul>
+  <li>
+    <p><strong>저장 위치</strong></p>
+
+    <p>쿠키는 클라이언트에 메모리 또는 파일에 저장하고, 세션은 서버 메모리에 저장된다.</p>
+  </li>
+  <li>
+    <p><strong>보안</strong></p>
+
+    <p>쿠키는 클라이언트 로컬에 저장되기도 하고 특히 파일로 저장되는 경우 탈취, 변조될 위험이 있어 보안이 비교적 취약하다. 반대로 세션은 정보 자체는 서버에 저장되어 있으므로 비교적 안전하다.</p>
+  </li>
+  <li>
+    <p><strong>라이프 사이클</strong></p>
+
+    <p>Permanent 쿠키의 경우 브라우저를 종료하더라도 저장될 수 있지만, 세션은 서버에서 지워버릴 수 있기도 하고 세션 쿠키에서 세션 아이디를 저장한 경우 브라우저 종료시 정보가 날아간다.</p>
+  </li>
+  <li>
+    <p><strong>속도</strong></p>
+
+    <p>쿠키 사용시 서버는 요청 헤더를 바로 참조하면 되므로 속도에 유리하지만, 세션은 받은 세션 아이디를 이용해 다시 데이터를 참조해야하므로 속도가 비교적 느릴 수 있다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="jwt를-사용하는-이유">JWT를 사용하는 이유</h4>
+
+<ul>
+  <li>
+    <p>서버 인프라를 확장해야 되서 여러 개의 서버를 사용해 로드 밸런싱을 수행하는 경우 문제 발생</p>
+
+    <p>서버1과 세션을 만든 클라이언트의 세션ID는 서버1에 저장되지만 서버2는 알지 못하기 때문</p>
+  </li>
+  <li>
+    <p>따라서 주어진 요청을 허용하거나 거부하는데 필요한 모든 정보가 포함된 <code class="language-plaintext highlighter-rouge">토큰</code>을 사용해 서버는 검증만 하는 방식을 사용한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="웹-캐시를-사용하는-이유">웹 캐시를 사용하는 이유</h4>
+
+<ul>
+  <li>캐싱은 기본적으로 처리 속도를 높이기 위해 사용된다.</li>
+  <li>웹 캐시는 서버의 정적 컨텐츠(이미지, JS, CSS 등)를 저장해 웹 사이트 서버에 해당 컨텐츠를 매번 요청해서 받지 않음으로 사이트 응답 시간을 줄이기 위한 방법이다.</li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<h1 id="들어가기-전에">들어가기 전에</h1>
+
+<p>HTTP 통신은 다음과 같은 특징을 가진다.</p>
+
+<ul>
+  <li>대부분의 파일 형식 전송 가능</li>
+  <li>클라이언트 - 서버 구조</li>
+  <li><code class="language-plaintext highlighter-rouge">비상태성 Stateless</code> : 서버는 클라이언트의 상태를 저장하지 않는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">비연결성 Connectionless</code> : 연결을 유지하지 않는 것을 기본 동작으로 갖는다.</li>
+</ul>
+
+<p><br /></p>
+
+<p>실제로는 데이터 유지가 필요한 경우가 많다. 정보를 유지하지 않으면 페이지를 이동할 때마다 로그인을 다시하거나, 상품을 선택했는데 구매 페이지에 상품 정보가 없거나 하는 일이 발생할 수 있기 때문이다.</p>
+
+<p>이에 따라 상태값을 저장할 수 있는 수단이 필요하게 됐다. 클라이언트에 정보를 파일로 남기는 것을 <code class="language-plaintext highlighter-rouge">쿠키</code>라고 하고 서버에서 별도로 저장하는 것을 <code class="language-plaintext highlighter-rouge">세션</code>이라고 한다.</p>
+
+<p><br /><br /></p>
+
+<h1 id="쿠키-세션-jwt-캐시">쿠키, 세션, JWT, 캐시</h1>
+
+<ul>
+  <li>HTTP 프로토콜의 <code class="language-plaintext highlighter-rouge">비연결성(Connectionless)</code>과 <code class="language-plaintext highlighter-rouge">비상태성(Stateless)</code> 특성을 보완하기 위한 방법</li>
+  <li>로그인, 접속시간, 장바구니 등 다양한 <strong>사용자 정보를 관리</strong>하여 웹사이트에서 사용자 경험을 더욱 편하게 만들어 준다.</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h2 id="쿠키">쿠키</h2>
+
+<ul>
+  <li>웹 사이트에 접속할 때 <strong>서버에서 생성</strong>하여 <strong>사용자 브라우저에 정보를 담는 임시 파일</strong>이다.</li>
+  <li>
+    <p>제한적이지만 브라우저와 서버 간 지속적으로 유지할 수 있는 데이터를 제공한다.</p>
+  </li>
+  <li>쿠키의 데이터 형태는 Key와 Value로 구성되고 String 형태로 이루어져 있다. 크기는 4KB를 넘을 수 없다.</li>
+</ul>
+
+<p><br /></p>
+
+<blockquote>
+  <p>☝️ 여기서 잠깐!</p>
+
+  <p>웹 브라우저 쿠키의 최대는 왜 4KB 일까?</p>
+
+  <p>encodeURIComponet() 로 인코딩한 이후의 name=value 쌍은 4KB를 넘을 수 없기 때문이다.</p>
+
+  <p>또한 서버 도메인 하나당 저장할 수 있는 쿠키의 수는 20여개 정도로 한정되어 있다. (브라우저마다 상이)</p>
+</blockquote>
+
+<p><br /></p>
+
+<h4 id="구성요소">구성요소</h4>
+
+<ul>
+  <li>Name : 쿠키의 이름</li>
+  <li>Value : 쿠키의 저장된 값</li>
+  <li>Option : 쿠키의 속성
+    <ul>
+      <li>Expires : 쿠키 만료일</li>
+      <li>Domain : 쿠키가 사용되는 도메인</li>
+      <li>Path : 쿠키를 반환할 경로</li>
+      <li>Secure : 보안 연결 설정</li>
+      <li>HTTPOnly : HTTPOnly 설정시 쿠키는 서버에 전송하는 용도로만 사용가능</li>
+      <li>SameSite : XSRF 공격을 방어하기 위한 속성</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="목적">목적</h4>
+
+<ul>
+  <li>
+    <p><strong>세션 관리(Session Management)</strong></p>
+
+    <p>로그인, 사용자 닉네임, 접속 시간, 장바구니 등 서버가 알아야할 정보를 저장</p>
+  </li>
+  <li>
+    <p><strong>개인화(Personalization)</strong></p>
+
+    <p>사용자마다 다르게 그 사람에 적절한 페이지를 보여줄 수 있음</p>
+  </li>
+  <li>
+    <p><strong>트래킹(Tracking)</strong></p>
+
+    <p>사용자의 행동과 패턴을 분석하고 기록</p>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<h3 id="동작-과정">동작 과정</h3>
+
+<p><img src="/assets/img/posts/cs/net/4-3_cookie_flow.png" alt="cookie 동작과정" /></p>
+
+<ol>
+  <li>클라이언트가 서버에 요청</li>
+  <li>서버는 HTTP 응답 헤더에 <code class="language-plaintext highlighter-rouge">set-cookie 속성</code>을 추가하여 응답 →  클라이언트는 쿠키 저장</li>
+  <li>클라이언트는 이후 서버에 요청할 때 전달받은 쿠키를 자동으로 요청 헤더에 추가하여 요청(브라우저가 자동으로 추가)</li>
+  <li>서버에서 쿠키를 참고하여 로직 수행</li>
+</ol>
+
+<p><br /></p>
+
+<h4 id="쿠키-사용-예시">쿠키 사용 예시</h4>
+
+<ul>
+  <li>아이디 저장, 로그인 상태 유지</li>
+  <li>일주일간 다시 보지 않기</li>
+  <li>쇼핑몰 장바구니 기능</li>
+  <li>최근 검색한 상품을 광고에서 추천</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h3 id="쿠키의-종류">쿠키의 종류</h3>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Session 쿠키</code> : 웹 브라우저가 종료될 때 제거되는 쿠키</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Permanent 쿠키</code> : 브라우저가 종료돼도 유지되는 쿠키 (<code class="language-plaintext highlighter-rouge">Expires</code> 또는 <code class="language-plaintext highlighter-rouge">Max-Age</code> 옵션으로 쿠키가 얼마나 유지될지 정해줌)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Secure 쿠키</code> : HTTPS 프로토콜에서만 사용, 쿠키 정보가 암호화 되어 전송됨 <strong>(쿠키 탈취문제 예방)</strong></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Third-Party 쿠키</code> : 사용자가 방문한 웹 사이트에서 발행한 쿠키가 아니라, 다른 웹 사이트에서 발행한 쿠키</p>
+
+    <ul>
+      <li>
+        <p>다른 사이트의 사용내역에 대한 정보를 쿠키로부터 가져와 활용할 수 있어 사용자의 온라인상 행동을 추적 및 데이터를 분석해 광고 등에 사용할 수 있다.</p>
+      </li>
+      <li>
+        <p>방문한 도메인과 다른 도메인의 쿠키 보통 광고 베너 등을 관리할 때 유입 경로를 추적하기 위해 사용</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">ads.com</code> 스크립트가 심어져 있는<code class="language-plaintext highlighter-rouge"> amazon.com</code> 에서 A 상품을 보면 <code class="language-plaintext highlighter-rouge">ads.com</code> 은 사용자가 <code class="language-plaintext highlighter-rouge">amazon.com</code>에서 A 상품을 봤다는 정보를 담아 쿠키를 발행,</p>
+
+        <p>사용자가 <code class="language-plaintext highlighter-rouge">cupang.com</code> 사이트에 방문했을 때 <code class="language-plaintext highlighter-rouge">cupang.com</code> 에 <code class="language-plaintext highlighter-rouge">ads.com</code> 스크립트가 심어져 있다면 <code class="language-plaintext highlighter-rouge">amazon.com</code> 에서 A 상품 봤다는 것을 쿠키 정보로 광고를 보여줄 수 있다.</p>
+      </li>
+    </ul>
+
+    <blockquote>
+      <p>☝️ 여기서 잠깐!</p>
+
+      <p>구글 크롬에서 2023년까지 서드파티 쿠키 지원을 중단하고 FLoC 기술로 대체한다고 발표한 바 있음. 그러나 서드파티 쿠키의 문제점을 해결한 기술이 전혀 아니라는 의견이 있음.</p>
+
+      <p><a href="https://www.boannews.com/media/view.asp?idx=95418">- 서드파티 쿠키 대신 플록 제안한 구글, 사실은 덫을 놓았나?</a></p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<h3 id="단점">단점</h3>
+
+<ul>
+  <li>
+    <p>쿠키에 대한 매 정보를 헤더가 추가해서 보내기 때문에 <strong>추가적인 트래픽</strong> 발생</p>
+  </li>
+  <li>
+    <p>불안 요소가 많고 <strong>해킹의 위험</strong>도 높다.</p>
+
+    <p>-&gt; 따라서 조작되거나 가로채여도 큰 일은 없을 수준의 정보들을 저장</p>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<h3 id="보안-옵션">보안 옵션</h3>
+
+<h4 id="secure">Secure</h4>
+
+<ul>
+  <li>HTTPS 프로토콜에서만 쿠키를 전송(쿠키 탈취문제 예방)</li>
+  <li>그래도 민감한 정보는 담지 않는 것이 좋다.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="httponly">HttpOnly</h4>
+
+<ul>
+  <li>
+    <p>Cross Site Scripting(XSS) 공격 방지</p>
+  </li>
+  <li>
+    <p>브라우저에서 쿠키 접근 불가</p>
+  </li>
+  <li>
+    <p>HttpOnly 속성 정의된 쿠키는 서버에 전송하는 용도로만 사용할 수 있다.</p>
+
+    <p>-&gt; HttpOnly가 설정된 쿠키는 HTTP 통신 상에서만 사용되어아 하기 때문에, 자바스크립트 같은 외부 프로그램은 접근할 수 없다.</p>
+  </li>
+  <li>
+    <p>그러나 최근 웹 페이지들은 SPA로 구현되어지고 AJAX를 통해 서버와 통신하는데, HttpOnly 옵션을 가진 쿠키는 JavaScript를 통해 접근하지 못해 쿠키 값을 서버에 전송할 수 없다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="samesite">SameSite</h4>
+
+<ul>
+  <li>XSRF 공격을 방어하기 위한 속성</li>
+  <li>
+    <p>Cross-Site 요청에 쿠키를 포함할지 포함하지 않을지 결정하는 쿠키 보안 속성</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">None</code> : SmaeSite 속성이 등장하기 전 동작하던 쿠키 방식
+    <ul>
+      <li>쿠키는 크로스 사이트 요청에도 항상 전송됨</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Lax</code> : 웹 페이지 이동과 안전한 HTTP 메서드 요청의 경우 쿠키를 전송
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">&lt;a href&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;link href&gt;</code> ,<code class="language-plaintext highlighter-rouge"> &lt;form method=get&gt;</code>에서는 쿠키 전송</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Static</code> : 모든 크로스 사이트 요청에 쿠키를 전송하지 않음</li>
+</ul>
+
+<p><br /></p>
+
+<blockquote>
+  <p>☝️여기서 잠깐!</p>
+
+  <p>XSS (Cross Site Scripting) : 공격자가 웹 사이트에 악성 스크립트를 주입해 사용자 브라우저에서 악성 스크립트를 실행시키는 공격</p>
+
+  <p>XSRF (Cross Site Request Forgery) : 사용자가 자신의 의지와 무관하게 공격자가 의도한 행위(수정, 삭제 등)를 특정 웹사이트에 요청하게 하는 공격</p>
+</blockquote>
+
+<p><br /><br /><br /></p>
+
+<h2 id="세션">세션</h2>
+
+<ul>
+  <li>쿠키의 트래픽 문제와 보안 이슈를 해결하기 위해 등장</li>
+  <li>사용자가 브라우저를 통해 웹 서버에 접속한 시점부터 종료하는 시점까지 일련의 요청들을 하나의 상태로 보고 그 상태를 일정하게 유지시키는 기술 <strong>(논리적인 연결)</strong></li>
+  <li>정보를 서버에 저장하고, 브라우저를 닫을 때 소멸</li>
+  <li>세션 ID로 클라이언트를 구분해, 클라이언트 요구에 맞는 서비스를 제공</li>
+  <li>보안 면에서 쿠키보다 우수하지만 사용자가 많아질 수록 서버 메모리를 많이 차지하게 됨</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="동작-과정-1">동작 과정</h3>
+
+<p><img src="/assets/img/posts/cs/net/4-3_session_flow.png" alt="session 동작과정" /></p>
+
+<ol>
+  <li>클라이언트가 서버에 처음으로 요청을 보냄 (처음이라 <code class="language-plaintext highlighter-rouge">session id</code>가 존재하지 않음)</li>
+  <li>서버에서 <code class="language-plaintext highlighter-rouge">session id</code>를 발급하여 응답</li>
+  <li>클라이언트가 전달 받은 <code class="language-plaintext highlighter-rouge">session id</code>를 쿠키로 저장</li>
+  <li>클라이언트는 매 요청마다 헤더 쿠키에 넣어 요청</li>
+  <li>서버는 <code class="language-plaintext highlighter-rouge">session id</code>를 통해 사용자를 식별하고 클라이언트 상태 정보를 유지하며 응답</li>
+  <li>클라이언트 종료 시 <code class="language-plaintext highlighter-rouge">session id</code> 제거, 서버에서도 제거</li>
+</ol>
+
+<p><br /></p>
+
+<blockquote>
+  <p>☝️ 여기서 잠깐!</p>
+
+  <p>만약 클라이언트가 로그인을 성공하면 서버는 <code class="language-plaintext highlighter-rouge">새로운 session id</code>(로그인을 인증받은)를 발급한다. 클라이언트도 <code class="language-plaintext highlighter-rouge">새로 발급 받은(로그인 인증 받은) session id</code>와 함께 요청하게 된다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h4 id="세션-사용-예시">세션 사용 예시</h4>
+
+<ul>
+  <li>
+    <p>로그인 같이 보안에 필요한 작업에 사용</p>
+  </li>
+  <li>
+    <p>한 페이지 내에서 로그인하고 다른 페이지를 왔다 갔다 할 때도 로그인 정보 유지</p>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<h3 id="세션의-단점">세션의 단점</h3>
+
+<ul>
+  <li>
+    <p>서버에 데이터를 저장하기 때문에 양이 많아질수록 부하가 커지고 저장 공간 부족 문제 발생</p>
+
+    <p>-&gt; 동시접속자 수가 많은 웹 사이트의 경우 서버에 과부화를 주게 되어 성능 저하의 요인이 됨</p>
+  </li>
+  <li>
+    <p>쿠키에 정보가 있으면 헤더를 바로 참조하면 되지만, 세션은 세션 아이디를 이용해 서버에서 데이터를 참조해야 하므로 속도가 비교적 느릴 수 있다.</p>
+  </li>
+  <li>
+    <p>session id 또한 탈취되면 보안 상 문제 발생</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="해결-방법">해결 방법</h4>
+
+<ul>
+  <li>HTTPS 사용해 서버와 클라이언트 간의 주고받는 정보를 암호화해 요청을 탈취하더라도 읽지 못하게 하기</li>
+  <li>세션에 유효시간을 지정하기 (일정 시간 지나면 해당 클라이언트와 서버의 세션 끊기)</li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<h2 id="jwt-json-web-token">JWT (JSON Web Token)</h2>
+
+<ul>
+  <li>인증에 필요한 정보들을 암호화시킨 토큰</li>
+  <li><code class="language-plaintext highlighter-rouge">Token</code> : 인증을 위해 사용되는 암호화된 문자열</li>
+  <li>서버는 토큰이 유효한지만 확인하면 되고 별도의 저장소가 필요없어 세션 인증에 비해 <strong>서버 운영의 효율이 더 좋다.</strong></li>
+  <li>토큰 기반으로 하는 다른 인증 시스템(구글, 페이스북 로그인)에 접근이 가능해 확장성이 뛰어나다.</li>
+  <li>C, Python, Java, JavaScript 등 대부분의 프로그래밍 언어에서 지원되어 범용성이 좋다.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="구성요소-1">구성요소</h4>
+
+<ul>
+  <li>
+    <p><strong>Header(헤더)</strong></p>
+
+    <p>토큰의 타입과 해싱할 알고리즘 방식(일종의 metadata 정보)</p>
+  </li>
+  <li>
+    <p><strong>Payload(정보)</strong></p>
+
+    <p>토큰에 담을 정보 (일반적으로 유저의 고유 ID값과 유효기간)</p>
+  </li>
+  <li>
+    <p><strong>Verify Signature(서명)</strong></p>
+
+    <ul>
+      <li>Base64 방식으로 인코딩한 <code class="language-plaintext highlighter-rouge">Header</code>  <code class="language-plaintext highlighter-rouge">Payload</code>  <code class="language-plaintext highlighter-rouge">SECRET KEY</code> 를 더한 후 서명</li>
+    </ul>
+
+    <p><br /></p>
+
+    <blockquote>
+      <p>☝️ 여기서 잠깐!</p>
+
+      <p>Verify Signature를 사용하는 이유는?</p>
+
+      <p>Verify Signature는 <code class="language-plaintext highlighter-rouge">SECRET KEY</code>를 알지 못하면 복호화 할 수 없다.</p>
+
+      <p>만약 누군가가 A의 토큰을 조작해 데이터를 훔치려고 할 때, A 토큰의 ID를 자신의 ID로 바꿔서 서버에 보내야 한다. 그런데 이때 서버는 암호화된 Verify Signature를 검사해서 정보가 바뀐 토큰을 유효하지 않은 토큰으로 간주하게 된다.</p>
+
+      <p>즉, SECRET KEY를 알지 못하는 이상 토큰을 조작할 수 없다는 것이다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<h3 id="토큰-전달과-저장-방법">토큰 전달과 저장 방법</h3>
+
+<p><img src="/assets/img/posts/cs/net/4-3_jwt_flow.png" alt="JWT 동작 과정" /></p>
+
+<h4 id="로그인-시">로그인 시</h4>
+
+<ol>
+  <li>
+    <p>브라우저에서 사용자가 로그인하면 서버에 이메일과 비밀번호를 전송</p>
+  </li>
+  <li>
+    <p>서버에서 이메일과 비밀번호를 확인 후 사용자가 확인되면<code class="language-plaintext highlighter-rouge"> JWT</code>를 생성</p>
+
+    <p>(사용자 고유 ID값을 부여하고, 기타 정보와 함께 Payload에 넣음)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">JWT</code>의 유효기간을 설정하고, <code class="language-plaintext highlighter-rouge">SECRET KEY</code> 이용해 Access Token 발급</p>
+  </li>
+  <li>
+    <p>사용자는 Access Token을 받아 쿠키에 저장</p>
+  </li>
+  <li>
+    <p>인증이 필요한 요청마다 토큰을 헤더에 실어 보냄</p>
+  </li>
+  <li>
+    <p>서버에서 해당 토큰의 Signature를 <code class="language-plaintext highlighter-rouge">SECRET KEY</code>로 복호화한 후, 조작 여부와 유효 기간을 확인</p>
+  </li>
+  <li>
+    <p>해당 토큰 검증이 완료되면 Payload를 디코딩하고 해석한 정보에 따라 응답</p>
+  </li>
+</ol>
+
+<p><br /><br /></p>
+
+<h3 id="단점-1">단점</h3>
+
+<ul>
+  <li>
+    <p>이미 발급된 JWT에 대해서는 돌이킬 수 없다.</p>
+
+    <p>세션/쿠키의 경우 쿠키가 악의적으로 이용되면 해당 세션을 지워버리면 된다. 하지만 JWT는 한 번 발급되면 유효기간이 완료될 때까지 계속 사용이 가능하다.</p>
+  </li>
+  <li>
+    <p>Payload 정보가 제한적이다.</p>
+
+    <p>Payload는 따로 암호화되지 않아 디코딩하면 누구나 정보를 확인할 수 있기 때문에, 중요한 정보는 넣을 수 없다.</p>
+  </li>
+  <li>
+    <p>JWT 길이가 쿠키와 세션에 비해 길다.</p>
+
+    <p>인증에 필요한 요청이 많아질 수록 서버 자원 낭비가 발생한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="해결-방법---refresh-token">해결 방법 - Refresh Token</h3>
+
+<ul>
+  <li>JWT(Access Token)의 경우 보안을 위해 유효 기간을 짧게 세팅한다. 그러나 이러면 사용자가 새 토큰을 발급받기 위해 로그인을 자주 시도해야 한다.</li>
+  <li>처음 인증을 완료했을 때 유효기간이 짧은 Access Token과 유효기간이 긴(보통 2주) Refresh Token을 동시에 발급하고, Access Token이 만료되면 Refresh Token을 통해 새로 토큰을 발급 받는다.</li>
+  <li>여전히 Access Token을 탈취 당하면 정보가 유출되는건 동일하지만, 유효기간이 짧아 조금 더 안전하게 하자는 의미 + 서버는 Refresh Token을 삭제함으로 강제 로그아웃 시킬 수 있음</li>
+  <li>하지만 검증 프로세스가 길어져 구현이 복잡하고, Access Token 만료될 때 마다 새로 발급하는 과정에서 HTTP 요청 횟수가 많아 서버 자원 낭비로 이어질 수 있다.</li>
+</ul>
+
+<p><img src="/assets/img/posts/cs/net/4-3_refresh_token_flow.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p>시간이 흘러 <code class="language-plaintext highlighter-rouge">Access Token</code>이 만료</p>
+  </li>
+  <li>
+    <p>사용자는 만료된 <code class="language-plaintext highlighter-rouge">Access Token</code>을 헤더에 실어 요청을 보낸다.</p>
+  </li>
+  <li>
+    <p>서버는 <code class="language-plaintext highlighter-rouge">Access Token</code>이 만료됨을 확인</p>
+  </li>
+  <li>
+    <p>만료된 토큰임을 알리고 권한없음을 신호로 보낸다.</p>
+
+    <blockquote>
+      <p>☝️ 여기서 잠깐!</p>
+
+      <p>Access Token이 만료될때 마다 9~11 과정을 거칠 필요는 없다.</p>
+
+      <p>Access Token의  Payload를 통해 유효기간을 알수 있다.</p>
+
+      <p>따라서 프론트엔드 단에서 API 요청 전에 토큰이 만료 됐다면 바로 재발급 요청 가능.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>사용자는 <code class="language-plaintext highlighter-rouge">Refresh Token</code>과 <code class="language-plaintext highlighter-rouge">Access Token</code>을 함께 서버로 보낸다.</p>
+  </li>
+  <li>
+    <p>서버는 받은 <code class="language-plaintext highlighter-rouge">Access Token</code>이 조작되지 않았는지 확인한후, <code class="language-plaintext highlighter-rouge">Refresh Token</code>과 사용자의 DB에 저장되어 있던 <code class="language-plaintext highlighter-rouge">Refresh Token</code>을 비교한다.</p>
+  </li>
+  <li>
+    <p>서버는 Token이 동일하고 유효기간도 지나지 않았다면 <code class="language-plaintext highlighter-rouge">새로운 Access Token</code>을 사용자에게 보내준다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">새로운 Access Token</code>을 헤더에 실어 API 요청</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h4 id="사용-예시">사용 예시</h4>
+
+<ul>
+  <li>일정 시간이 지나면 자동으로 로그아웃되는 기능</li>
+  <li>최초 로그인한 ip와 다른 ip에서 로그인 요청이 왔을 때 강제 로그아웃 기능 (Refresh 삭제하기)</li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<h2 id="캐시">캐시</h2>
+
+<ul>
+  <li>
+    <p>리소스 파일들의 임시 저장소</p>
+
+    <p>(자주 사용되는 이미지나 html, css, js 파일 등을 브라우저에 저장해놓고 사용)</p>
+  </li>
+  <li>
+    <p>같은 자원을 사용할 때 일일이 불러오지 않고 캐시되어 있는 자원을 사용하여 <strong>전송량은 줄이고 속도는 높이는 방법</strong></p>
+  </li>
+  <li>
+    <p>캐시에 있는 것을 재사용하기 때문에 경우에 따라 <strong>변경된 자원을 참조할 수 없는 경우가 생김</strong></p>
+
+    <p>-&gt; 사용자가 브라우저 캐시를 지워주거나, 서버에서 클라이언트로 응답 보낼 때 헤더에 자원 캐시 만료기간을 명시하는 방법 등을 이용해 회피할 수 있다.</p>
+  </li>
+  <li>
+    <p>사용자가 수동으로 삭제해줘야 한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="content-delivery-network-cdn">Content Delivery Network (CDN)</h4>
+
+<ul>
+  <li>지리적으로 분산된 여러 개의 서버를 이용해 웹 콘텐츠를 사용자와 가까운 서버에 전송함으로 전송 속도를 높이는 방법</li>
+  <li>각 지역에 캐시 서버(PoP, Points of presence)를 분산 배치해 근접 사용자의 요청에 본 서버가 아닌 캐시 서버가 콘텐츠를 전달한다.</li>
+  <li>서버와 사용자의 물리적 거리를 줄여 콘텐츠 로딩에 소요되는 시간을 최소화한다.</li>
+  <li>치킨 체인점이 전국 주문을 본사에서 전부 처리하지 않고 각지의 체인점에서 받는 것처럼, CDN은 여러 지역에 설치된 캐시 서버를 사용해 본 서버로 들어오는 요청을 분산 처리하는 서비스다.</li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<h1 id="추가-내용">추가 내용</h1>
+
+<h3 id="브라우저-저장소">브라우저 저장소</h3>
+
+<p>브라우저에서 지원하는 저장소는 쿠키 외에도 <code class="language-plaintext highlighter-rouge">로컬 스토리지(Local Storage)</code>와 <code class="language-plaintext highlighter-rouge">세션 스토리지(Session Storage)</code>가 있다.</p>
+
+<ul>
+  <li>HTML5에 추가된 key-value 스토리지로, 클라이언트에 대한 정보를 로컬에 저장.</li>
+  <li>로컬 스토리지 : 유효 기간이 없고 영구적으로 이용 가능</li>
+  <li>세션 스토리지 : 세션 종료 시(브라우저 닫을 시) 데이터가 삭제됨</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="장점">장점</h4>
+
+<ul>
+  <li>5MB까지 사용 가능</li>
+  <li>쿠키와 다르게 웹 스토리지는 네트워크 요청 시 서버로 전송되지 않아 쿠키보다 더 많은 자료를 보관할 수 있다.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="단점-2">단점</h4>
+
+<ul>
+  <li>HTTP5 지원하지 않는 브라우저는 사용 불가</li>
+  <li>XSS(Cross Site Scripting)공격에 취약, 그러나 CSRF 공격엔 더 안전</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h3 id="xsrf-cross-site-request-forgery-공격">XSRF (Cross Site Request Forgery) 공격</h3>
+
+<ul>
+  <li>사용자가 자신의 의지와 무관하게 공격자가 의도한 행위(수정, 삭제 등)를 특정 웹사이트에 요청하게 하는 공격</li>
+  <li>특정 웹 사이트가 사용자의 웹 브라우저를 신뢰하는 상태를 노린 공격</li>
+  <li>사용자가 웹 사이트에 로그인한 상태에서 XSRF 공격 코드가 삽입된 페이지를 열면, 공격 대상이 되는 웹사이트는 위조된 공격 명령이 믿을 수 있는 사용자로부터 발송된 것으로 판단하게 되어 공격에 노출된다.</li>
+  <li>예를 들어, 페이스북에 희생자의 계정으로 광고성 글을 올리거나, 희생자가 피싱 사이트에 접속하도록 하는 것</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="대응-방법">대응 방법</h4>
+
+<ul>
+  <li>피싱 페이지에서 호출한 백엔드 API가 실패되도록 해야 한다.</li>
+  <li>백엔드 API가 정상적으로 응답해야 하는지 판단해야 하기 때문에 백엔드 측에서 대응해줘야 한다.</li>
+</ul>
+
+<ol>
+  <li>쿠키의 SameSite 사용
+    <ul>
+      <li>SameSite 속성 값으로 <code class="language-plaintext highlighter-rouge">Lax</code>, <code class="language-plaintext highlighter-rouge">Strict</code> 사용하면 쿠키를 동일한 사이트에서만 전달 할 수 있게 할 수 있다.</li>
+      <li>구형 브라우저에서는 SameSite 속성을 지원하지 않아 한계가 있다.</li>
+    </ul>
+  </li>
+  <li>Referer 체크
+    <ul>
+      <li>Request 헤더의 Referer을 확인해 유효한 사이트에서 API를 호출하는지 확인하는 방법</li>
+      <li>Same-Origin Policy(SOP)를 지키면 XSRF 공격을 방어할 수 있지만, 다른 출처의 자원을 사용해야 하는 경우가 있어 CORS를 허용해주는 경우가 많다.</li>
+      <li>이 경우 CORS를 위해 모든 출처를 허용하지 않고 유효한 출처만 허용하는 것이 좋다.</li>
+    </ul>
+  </li>
+  <li>Security Token 사용
+    <ul>
+      <li>사용자 인증 절차를 좀 더 복잡하게 만들어 XSRF 공격 막기</li>
+      <li>임의의 토큰을 발급해 서버의 세션에 토큰을 저장하고, 그 토큰을 프론트 엔드로 전달</li>
+      <li>프론트엔드에서는 API를 호출할 대 전달 받은 토큰을 함께 전달하고, 서버에서 세션에 저장된 토큰과 프론트엔드에서 전달 받은 토큰을 비교해 동일할 경우 API를 실행하는 방식</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /><br /></p>
+
+<h3 id="xss-cross-site-scripting-공격">XSS (Cross Site Scripting) 공격</h3>
+
+<ul>
+  <li>공격자가 웹 사이트에 악성 스크립트를 주입해 사용자 브라우저에서 악성 스크립트를 실행시키는 공격</li>
+  <li>웹 사이트 관리자가 아닌 다른 사람이 웹 페이지에 악성 스크립트를 삽입할 수 있는 점을 노린 공격</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="비-지속적non-persistent-공격-방법">비 지속적(Non-persistent) 공격 방법</h4>
+
+<ul>
+  <li>
+    <p>Reflected XSS</p>
+  </li>
+  <li>포탈 사이트에서 문자열을 검색할 때, 일반적으로 검색 결과 페이지에서 검색한 문자열을 그대로 다시 표시한다.</li>
+  <li>검색한 문자열에 스크립트가 포함되어 그 스크립트가 실행된다면 비 지속적 XSS 공격에 취약점을 가지고 있는 것이다.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="지속적persistent-공격-방법">지속적(Persistent) 공격 방법</h4>
+
+<ul>
+  <li>비 지속적 공격 방법보다 치명적인 공격 방법</li>
+  <li>공격자가 게시판에 글쓰기를 통해 스크립트를 포함한 게시글을 작성한 후 서버에 저장,</li>
+  <li>다른 사용자가 게시글 읽을 때 게시글에 포함된 스크립트가 실행되면서 XSS 공격이 성공하게 됨</li>
+  <li>게시글을 읽는 사용자의 개인정보를 공격자에게 전송시키는 스크립트가 포함되어 있다고 한다면, 게시글을 읽는 모든 사람의 개인 정보가 유출되는 것이다.</li>
+  <li>사용자의 정보(쿠키, 세션 등)를 탈취하거나 비정상적인 기능(게시글 삭제, 수정 등)을 수행하게 할 수 있다.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="대응-방법-1">대응 방법</h4>
+
+<ul>
+  <li>XSS 공격은 보통 프론트 엔드 측에서 대응해준다.</li>
+  <li>페이지에서 공격자가 입력한 스크립트를 실행하지 못하게 해야 한다.
+    <ol>
+      <li>스크립트 입력을 막거나,
+        <ul>
+          <li>스크립트를 입력하지 못하도록 막는다. (<code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> 태그 방지)</li>
+          <li>그러나 다른 방식(이벤트 핸들러 등)로도 스크립트를 실행할 수 있어 모든 케이스에 대응해 입력 값을 제한하는 것은 쉽지 않다.</li>
+        </ul>
+      </li>
+      <li>브라우저가 스크립트를 실행하지 못하도록 스크립트 값을 변경해야 한다.
+        <ul>
+          <li>HTML 태그에 사용되는 <code class="language-plaintext highlighter-rouge">&lt;</code> <code class="language-plaintext highlighter-rouge">&gt;</code> 문자열을 인코딩한 것을 저장해 브라우저가 일반 문자열로 인식해 스크립트가 실행되지 않도록 하는 방법</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<h1 id="예상-질문--모의-면접-질문">예상 질문 + 모의 면접 질문</h1>
+
+<h3 id="http-프로토콜의-비상태성-비연결성의-장점이-뭐라고-생각하시나요">HTTP 프로토콜의 비상태성, 비연결성의 장점이 뭐라고 생각하시나요?</h3>
+
+<p>계속해서 통신 연결을 유지하지 않기 때문에 리소스 낭비가 줄어듭니다.</p>
+
+<p><br /></p>
+
+<h4 id="http를-사용할-때-서버는-클라이언트의-정보를-저장하지-않는데-어떻게-자동-로그인이나-장바구니-기능을-사용할-수-있을까요">HTTP를 사용할 때 서버는 클라이언트의 정보를 저장하지 않는데, 어떻게 자동 로그인이나 장바구니 기능을 사용할 수 있을까요?</h4>
+
+<p>쿠키나 세션을 이용해서 상태값을 클라이언트나 서버에 저장함으로 로그인과 장바구니 기능을 사용할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="쿠키와-세션의-차이점과-쿠키와-세션-각각의-특징을-설명해주세요"><strong>쿠키와 세션의 차이점과 쿠키와 세션 각각의 특징을 설명해주세요</strong></h3>
+
+<p>가장 큰 차이는 정보가 저장되는 위치입니다. 쿠키는 클라이언트, 세션은 서버의 자원을 사용합니다.</p>
+
+<p>쿠키는 요청 속도가 빠르고 세션은 쿠키보다 더 보안이 좋다는 점이 특징입니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="인터넷-쇼핑을-할-때-쿠팡에서-시리얼을-보고-나면-sns에서도-시리얼-광고가-나오는데-이건-어떻게-가능한-일일까요">인터넷 쇼핑을 할 때, 쿠팡에서 시리얼을 보고 나면 SNS에서도 시리얼 광고가 나오는데 이건 어떻게 가능한 일일까요?</h3>
+
+<p>서드파티 쿠키를 사용하기 때문에 가능합니다. 서드파티 쿠키란 사용자가 방문한 웹 사이트에서 발행한 쿠키가 아니라, 다른 웹 사이트에서 발행한 쿠키인데, 다른 사이트의 사용내역에 대한 정보를 쿠키로부터 가져와 활용할 수 있어 사용자의 온라인상 행동을 추적 및 데이터를 분석해 광고 등에 사용할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h4 id="서드파티-쿠키의-단점은-무엇인가요">서드파티 쿠키의 단점은 무엇인가요?</h4>
+
+<p>서드파티 쿠키를 추적함으로 개인정보보호를 침해할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="jwt는-무엇이고-장단점에-대해-설명해주세요">JWT는 무엇이고 장단점에 대해 설명해주세요.</h3>
+
+<p>Json Web Token의 약자로 모바일이나 웹의 사용자 인증을 위해 사용하는 암호화된 토큰입니다.</p>
+
+<p>보안성 쿠키를 전달하지 않아도 되어 취약점이 사라지지만 JWT 토큰이 길어질 수록 오버헤드가 심해진다는 단점이 있습니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="쿠키를-사용하게-될-때-예상되는-보안-문제가-있나요">쿠키를 사용하게 될 때 예상되는 보안 문제가 있나요?</h3>
+
+<p>쿠키는 클라이언트 로컬에 저장되기도 하고 특히 파일로 저장되는 경우 탈취, 변조될 위험이 있어 보안이 비교적 취약합니다. 공용 PC에서 쿠키값이 유출될 수 있고, XSS (Cross Site Scripting)나 XSRF (Cross Site Request Forgery) 같은 공격에 취약합니다.</p>
+
+<p><br /></p>
+
+<h4 id="xss-와-xsrf란">XSS 와 XSRF란?</h4>
+
+<ul>
+  <li>
+    <p>XSS (Cross Site Scripting)은 공격자가 웹 사이트에 악성 스크립트를 주입해 사용자 브라우저에서 악성 스크립트를 실행시키는 공격이고,</p>
+  </li>
+  <li>
+    <p>XSRF (Cross Site Request Forgery)는 사용자가 자신의 의지와 무관하게 공격자가 의도한 행위(수정, 삭제 등)를 특정 웹사이트에 요청하게 하는 공격입니다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="해당-문제에-대한-해결책은">해당 문제에 대한 해결책은?</h4>
+
+<p>기본적으로 사용자가 쿠키를 잘 관리해야 하고, 쿠키 내에는 웹 공격에 대응하기 위해 XSS를 대비한 HttpOnly 옵션과 XSRF를 대비한 Samesite 옵션이 있습니다.</p>
+
+<p>HttpOnly 옵션은 쿠키를 서버에 전송하는 용도로만 사용할 수 있도록 지정함으로써 자바스크립트 같은 외부 프로그램이 접근할 수 없도록 막는 것이고, SameSite 옵션은 Cross-Site 요청이 들어올 때 쿠키를 포함하지 않도록 막는 방법입니다.</p>
+
+<p><br /></p>
+
+<h4 id="많은-단점에도-굳이-쿠키를-사용하는-이유는">많은 단점에도 굳이 쿠키를 사용하는 이유는?</h4>
+
+<p>세션은 서버에 데이터를 저장, 즉 서버의 자원을 사용하기 때문에 서버 자원에 한계가 있고 메모리를 사용하다 보면 속도 저하도 올 수 있기 때문입니다.</p>
+
+<p>특히 쿠키는 Load Balancing이 필요할 때 큰 역할을 할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="세션-인증-방식과-토큰-인증-방식jwt의-차이점은">세션 인증 방식과 토큰 인증 방식(JWT)의 차이점은?</h3>
+
+<p>세션 인증에서는 서버가 세션 ID를 저장하고 클라이언트가 쿠키에 실어보낸 세션 ID와 대조해서 확인하는 반면, 토큰을 사용하면 요청을 받은 서버는 토큰이 유효한지를 확인만 하기때문에 세션 인증에 비해 서버 운영의 효율이 더 좋습니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="refresh-token을-프론트-서버의-세션과-백엔드-서버-중-어디에-저장해야-될까요">Refresh Token을 프론트 서버의 세션과 백엔드 서버 중 어디에 저장해야 될까요?</h3>
+
+<h5 id="1-프론트-서버의-세션에-저장하는-경우">1) 프론트 서버의 세션에 저장하는 경우</h5>
+
+<p>Refresh token을 프론트 서버의 세션에 저장하면 클라이언트가 토큰이 저장된 세션에 접근하기 위해 Session ID를 쿠키로 가지고 있어야 합니다.</p>
+
+<p>이 경우 새로 고침 상황에서  access token을 얻기 위해 벡엔드 서버로 요청을 보낼 필요가 없어 경제적입니다. 하지만 사용자가 많아질 수록 세션 관리가 힘들어질 수 있다는 단점이 있습니다.</p>
+
+<p><br /></p>
+
+<h5 id="2-백엔드-서버에-저장하는-경우">2) 백엔드 서버에 저장하는 경우</h5>
+
+<p>Refresh token을 벡엔드 서버에 저장하면 새로 고침했을 때 Access token을 얻기위해 백엔드 서버를 거쳐야 해서 비용이 더 들게 됩니다. 하지만 사용자가 많아짐에 따라 생기는 서버 이슈가 프론트, 벡엔드로 나뉘지 않고 백엔드에서 대부분 처리하기 때문에 관리에 용이하다는 장점이 있습니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="refresh-token을-사용한다고-가정하고-네이버-블로그의-access-token의-유효기간이-1시간이면-글을-작성하다-1시간이-지나서-글을-발행할-때-오류가-발생할텐데-이-문제는-어떻게-해결할-수-있을까요">Refresh Token을 사용한다고 가정하고, 네이버 블로그의 Access token의 유효기간이 1시간이면 글을 작성하다 1시간이 지나서 글을 발행할 때 오류가 발생할텐데 이 문제는 어떻게 해결할 수 있을까요?</h3>
+
+<p>일정 시간마다 새로운 Access Token을 발급 받는 설정을 추가할 수 있습니다. Access Token의 만료 기간이 1시간이라면 55분 정도에 새로운 token을 발급 받도록 해서 사용자가 Access token이 만료되었다는 사실을 모르게 연장시킬 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="만약-refresh-token이-탈취-당해-해커가-refresh-token을-이용해-새로운-access-token을-요청할-수-있지-않나요-보안에-취약한-것-아닌가요">만약 Refresh Token이 탈취 당해 해커가 Refresh Token을 이용해 새로운 Access Token을 요청할 수 있지 않나요? 보안에 취약한 것 아닌가요?</h3>
+
+<p>Refresh Token은 클라이언트와 서버 두 곳에 저장됩니다. 만약 Refresh Token이 탈취되어 해커가 새로운 Access Token을 발급한다면 서버는 다른 나라의 IP주소로 요청이 들어왔다거나 하는 검증 작업을 통해 요청을 거절하고 Refresh Token을 서버에서 지워버려 Access Token을 해커에게 발급하지 않을 수 있습니다. 즉, Refresh Token은 서버가 해킹된 토큰에 대한 방어 행동을 취할 수 있게 해주는 도구가 됩니다.</p>
+
+<p>그리고 Access token과 Refresh Token은 보안성뿐 아니라 성능과 사용 편의성 등을 적절하게 타협한 결과입니다. 보안만 추구한다면 더 좋은 방법들이 있을 것입니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="secure-쿠키가-어떻게-암호화되는지-설명해주세요">Secure 쿠키가 어떻게 암호화되는지 설명해주세요.</h3>
+
+<p>통신 과정에서 정보 유출을 막기 위해 HTTPS 프로토콜을 사용해 데이터를 암호화해 서버에 넘겨줍니다.</p>
+
+<p>암호화는 SSL/TLS 프로토콜에서 진행합니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="웹-브라우저-쿠키의-최대는-왜-4kb인가">웹 브라우저 쿠키의 최대는 왜 4KB인가?</h3>
+
+<ul>
+  <li>쿠키는 <code class="language-plaintext highlighter-rouge">encodeURIComponet()</code> 메소드로 인코딩을 하는데 이때 name=value 쌍이 4KB를 넘을 수 없기 때문입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">encodeURIComponet()</code> 메소드는 자바스크립트 메서드로 문자열을 URI 구성요소로서 인코딩하는 함수</li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li><a href="https://kotlinworld.com/97">HTTP의 특징</a></li>
+  <li><a href="https://github.com/workhardslave/cs-study/blob/main/Network/Cookie_Session_JWT_Cache.md">쿠키, 세션, JWT, 캐시</a></li>
+  <li>
+    <p><a href="https://wildeveloperetrain.tistory.com/146">Javascript Cookie 쿠키 저장, 가져오기, 삭제 함수</a></p>
+  </li>
+  <li>
+    <p><a href="https://nesoy.github.io/articles/2017-03/Session-Cookie">쿠키, 세션 그림</a></p>
+  </li>
+  <li><a href="https://beomy.github.io/tech/browser/cookie/">쿠키 보안 속성</a></li>
+  <li>
+    <p><a href="https://racoonlotty.tistory.com/entry/%EC%BF%A0%ED%82%A4%EC%99%80-%EC%84%B8%EC%85%98-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%A1%9C%EC%BB%AC-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%EC%99%80-%EC%84%B8%EC%85%98-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80">쿠키, 세션, 로컬 스토리지와 세션 스토리지</a></p>
+  </li>
+  <li><a href="https://itstory1592.tistory.com/62">쿠키와 세션 로그인 처리</a></li>
+  <li><a href="https://jeong-pro.tistory.com/80">쿠키, 세션, 캐시의 차이점</a></li>
+  <li>
+    <p><a href="https://beomy.github.io/tech/etc/xss-xsrf/">XSS, XSRF</a></p>
+  </li>
+  <li>
+    <p><a href="https://blog.rs-team.com/12">서드파티 쿠키</a></p>
+  </li>
+  <li>
+    <p><a href="https://velog.io/@kingth/%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EC%8B%9D%EC%84%B8%EC%85%98%EC%BF%A0%ED%82%A4-%ED%86%A0%ED%81%B0">서버 인증 방식(세션/쿠키, 토큰)</a></p>
+  </li>
+  <li>
+    <p><a href="https://tecoble.techcourse.co.kr/post/2021-10-20-refresh-token/">Refresh Token</a></p>
+  </li>
+  <li>
+    <p><a href="https://okky.kr/articles/1007579">Refresh Token이 필요한 이유는? 보안 관점</a></p>
+  </li>
+  <li><a href="https://velog.io/@tlatldms/%EC%84%9C%EB%B2%84%EA%B0%9C%EB%B0%9C%EC%BA%A0%ED%94%84-Refresh-JWT-%EA%B5%AC%ED%98%84#%EB%A1%9C%EA%B7%B8%EC%95%84%EC%9B%83-%EC%A0%95%EC%B1%85">서버 구현 시리즈</a></li>
+</ul>
+
+    </div>
+</article>
+
+    
+    <footer class="footer">
+        <section class="footer__about">
+                <p class="footer__about__copyright">Pino 2022</p>
+                
+                <span class="divider">·</span>
+                
+                <span class="footer__about__theme">
+                <p>by <a href="https://songhee-lee.github.io">songhee</a></p></span>
+        </section>
+</footer>
+    
+    <script src="/assets/js/jquery.slim.min.js"></script>
+<script src="/assets/js/lity.min.js"></script>
+<script src="/assets/js/tools.js"></script>
+</body>
+</html>

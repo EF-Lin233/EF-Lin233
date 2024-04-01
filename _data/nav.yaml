@@ -1,0 +1,67 @@
+- title: HOME
+  url: 
+- title: CS
+  url: category/cs.html
+  subnav:
+    - title: OS
+      url: category/os.html
+    - title: Net
+      url: category/net.html
+    - title: DB
+      url: category/db.html
+    - title: 자료구조
+      url: category/ds.html
+- title: AI
+  url: category/ai.html
+  subnav:
+    - title: "The Quest for Machine Learning"
+      url : category/ml_interview.html
+      subnav:
+        - title: ch1 피처 엔지니어링
+          url: category/ch1.html
+        - title: ch2 모델평가
+          url: category/ch2.html
+        - title: ch3 클래식 알고리즘
+          url: category/ch3.html
+        - title: ch4 차원축소
+          url: category/ch4.html
+        - title: ch5 비지도학습
+          url: category/ch5.html
+        - title: ch6 확률 그래프 모델
+          url: category/ch6.html
+        - title: ch7 최적화 알고리즘
+          url: category/ch7.html
+- title: ETC
+  url: category/etc.html
+- title: About
+  url: about/index.html
+  #icon: assets/img/icons/info.svg
+  #hue: "var(--c-themeHueGreen)"
+
+
+# - title: Programming #Menu item title.
+#   url: category/programming.html #Menu item url.
+#   icon: assets/img/icons/c.svg #Menu item icon.
+#   hue: "var(--c-themeHueRed)" #Menu item hue - see note [1].
+#   subnav: #Subnav. See note [2].
+#       - title: C++ #Submenu item title.
+#         url: category/cpp.html #Submenu item url.
+#         hue: "var(--c-themeHueOrange)" #Submenu item hue.
+#         subnav: #Another subnav
+#             - title: Libraries
+#               url: category/libs.html
+#               hue: "var(--c-themeHueBlue)"
+
+
+# - title: TIL
+#   url: category/til.html
+#   subnav:
+#     - title: 2022
+#       url: category/2022.html
+#       subnav:
+#         - title : 2022-09
+#           url: category/2022-09.html
+#         - title : 2022-10
+#           url: category/2022-10.html
+#         - title : 2022-11
+#           url: category/2022-11.html

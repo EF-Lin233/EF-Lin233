@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
+<link rel="stylesheet" href="/assets/style.css"/>
+<link rel="stylesheet" href="/assets/js/lity.min.css"/>
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:site_name" content="pino's blog" />
+<meta 
+    property="og:title"
+    content="
+        
+            TCP-UDP
+        
+    " 
+/>
+
+<meta property="og:url" content="//cs/network/2022/09/28/Net_002.html" />
+
+    <meta property="og:type" content="article" />
+
+
+
+    <meta property="fb:app_id" content="" />
+
+
+
+<title>
+    
+        TCP-UDP
+    
+</title>
+</head>
+<body class="index">
+
+    <header class="header">
+<!-- logo image
+    <section class="logo">
+        <a href="/" class="logo__link">
+            
+                <h1>pino's blog</h1>
+            
+        </a>
+    </section>
+-->
+    <button id="menuToggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+    <nav class="menu">
+        
+<ul class="list primary">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/">
+                
+                
+                    <p>HOME</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/cs.html">
+                
+                
+                    <p>CS</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/os.html">
+                
+                
+                    <p>OS</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/net.html">
+                
+                
+                    <p>Net</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/db.html">
+                
+                
+                    <p>DB</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ds.html">
+                
+                
+                    <p>자료구조</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ai.html">
+                
+                
+                    <p>AI</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ml_interview.html">
+                
+                
+                    <p>The Quest for Machine Learning</p>
+                
+                </a>
+
+            
+                <a class="button-submenu" href="#"><i class="arrow"></i></a>
+            </div>
+                
+<ul class="list">
+
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch1.html">
+                
+                
+                    <p>ch1 피처 엔지니어링</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch2.html">
+                
+                
+                    <p>ch2 모델평가</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch3.html">
+                
+                
+                    <p>ch3 클래식 알고리즘</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch4.html">
+                
+                
+                    <p>ch4 차원축소</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch5.html">
+                
+                
+                    <p>ch5 비지도학습</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch6.html">
+                
+                
+                    <p>ch6 확률 그래프 모델</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/ch7.html">
+                
+                
+                    <p>ch7 최적화 알고리즘</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+</ul>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/category/etc.html">
+                
+                
+                    <p>ETC</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+        <li class="item">
+
+            <div class="item-controls">
+                <a href="/about/index.html">
+                
+                
+                    <p>About</p>
+                
+                </a>
+
+            
+            </div>
+            
+        </li>   
+    
+</ul>
+    </nav>
+</header>
+
+    <article class="post">
+
+    <div class="post__title">
+        <h1 class="post__title__text">TCP-UDP</h1>
+    </div>
+    <div class="post__meta"> 
+        <div class="post__meta__category">
+            
+                <p class="post__meta__category__title" style="background: ">CS</p>
+            
+                <p class="post__meta__category__title" style="background: "></p>
+            
+        </div>
+        <p class="post__meta__divider">·</p>
+        <div class="post__meta__date">
+            September 28, 2022
+        </div>
+        
+            
+            <p class="post__meta__divider">·</p>
+            <div class="post__meta__author">
+                <p>by </p>
+                <img class="post__meta__author__photo" src="/assets/img/authors/jekyll.png"/>
+                <p>Songhee Lee</p>
+            </div>
+        
+    </div>
+
+    
+        <div class="post__navigator">
+            <div
+                class="post__navigator__buttons"
+                
+            >
+                
+                    <a href="_posts/2022-09-28-Net_001.md">
+                        <img  class="arrow-left" src="/assets/img/icons/arrow_left.svg"/>
+                        Previous
+                    </a>
+                
+                
+                    <a href="_posts/2022-09-28-Net_003.md">
+                        Next
+                        <img class="arrow-right" src="/assets/img/icons/arrow_right.svg"/>
+                    </a>
+                
+            </div>
+        </div>
+    
+
+    <div class="post__content">
+        <h1 id="0--internet-protocol-suite">0.  Internet Protocol Suite</h1>
+
+<p><code class="language-plaintext highlighter-rouge">인터넷 프로토콜 스위트</code>는 인터넷에서 컴퓨터들이 정보를 주고받는데 쓰이는 프로토콜의 집합으로, 대표적으로 <code class="language-plaintext highlighter-rouge">TCP/IP</code>의 4계층 모델 또는 <code class="language-plaintext highlighter-rouge">OSI 7계층</code> 모델이 있다.</p>
+
+<h4 id="tcpip">TCP/IP</h4>
+
+<p><code class="language-plaintext highlighter-rouge">TCP/IP</code>는 단순히 <code class="language-plaintext highlighter-rouge">TCP</code>와 <code class="language-plaintext highlighter-rouge">IP</code>만 일컫는 말이 아니라, 여러 가지 프로토콜의 조합을 의미한다. 다만 <code class="language-plaintext highlighter-rouge">TCP</code>와 <code class="language-plaintext highlighter-rouge">IP</code>가 가장 많이 사용되며 중요하기 때문에 그렇게 불린다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>4</th>
+      <th><strong>애플리케이션(응용)</strong> <strong>계층</strong></th>
+      <th>FTP, HTTP, SSH, SMTP, DNS …</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td><strong>전송 계층</strong></td>
+      <td>TCP, UDP, DCCP, SCTP, IL, RUDP, …</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>네트워크</strong> <strong>계층</strong></td>
+      <td>IP (IPv4, IPv6), ARP, RARP(주소 결정 프로토콜)</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><strong>데이터링크 계층</strong></td>
+      <td>IEEE 802, SDLC, HDLC …</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h4 id="osi-7-계층">OSI 7 계층</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>7</th>
+      <th><strong>응용</strong> <strong>계층</strong></th>
+      <th>HTTP, SMTP, SNMP, FTP, 텔넷, SSH &amp; Scp, NFS, RTSP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>6</td>
+      <td><strong>표현</strong> <strong>계층</strong></td>
+      <td>XDR, ASN.1, SMB, AFP</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>세션</strong> <strong>계층</strong></td>
+      <td>TLS, SSL, ISO 8327 / CCITT X.225, RPC, 넷바이오스, 애플토크</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>전송</strong> <strong>계층</strong></td>
+      <td>TCP, UDP, RTP, SCTP, SPX, 애플토크</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>네트워크</strong> <strong>계층</strong></td>
+      <td>IP, ICMP, IGMP, X.25, CLNP, ARP, RARP, BGP, OSPF, RIP, IPX, DDP</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>데이터</strong> <strong>링크</strong> <strong>계층</strong></td>
+      <td>이더넷, 토큰링, PPP, HDLC, 프레임 릴레이, ISDN, ATM, 무선랜, FDDI</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><strong>물리</strong> <strong>계층</strong></td>
+      <td>전선, 전파, 광섬유, 동축케이블, 도파관, PSTN, 리피터, DSU, CSU, 모뎀</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/posts/cs/net/3-2_tcpip_flow.png" alt="TCP_vs_UDP_01.jpeg" /></p>
+
+<p><br /><br /></p>
+
+<h2 id="transportation-layer">Transportation Layer</h2>
+
+<ul>
+  <li>송신자와 수신자를 연결하는 통신 서비스 제공
+    <ul>
+      <li>송신 호스트 : 데이터 메시지를 세그먼트로 분해하여 네트워크 계층(3계층)으로 전송한다.</li>
+      <li>수신 호스트 : 세그먼트들을 데이터 메시지로 재조립하여 응용 계층으로 전송한다.</li>
+    </ul>
+  </li>
+  <li>역할
+    <ul>
+      <li>데이터가 제대로 도착했는지 확인</li>
+      <li>전송된 데이터의 목적지가 어떤 어플리케이션인지 식별</li>
+      <li>오류 점검 기능으로 오류 발생 시 데이터 재전송 요청</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<blockquote>
+  <p>☝️여기서 잠깐! vs <strong>Network Layer</strong></p>
+
+  <ul>
+    <li>Network Layer(네트워크 계층, 3계층) : 호스트들 간의 논리적 통신을 돕는다.</li>
+    <li>Transport Layer(전송 계층, 4계층) : 응용 프로세스 간의 논리적 통신을 돕는다.</li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<h4 id="tcp와-udp는-왜-나오게-됐는가">TCP와 UDP는 왜 나오게 됐는가?</h4>
+
+<ul>
+  <li>IP의 역할은 Host-to-Host(장치 to 장치)만을 지원한다. 하나의 장비 안에서 수 많은 프로그램들이 통신할 경우에는 IP 만으로는 한계가 있다.
+    <ul>
+      <li>PORT 번호를 사용해 응용 프로그램을 구분한다.</li>
+    </ul>
+  </li>
+  <li>또한 IP에서 오류가 발생한다면 ICMP에서 알려주는데, ICMP는 알려주기만 할 뿐 대처를 하지 못하기 때문에 IP보다 위에서 처리를 해줘야 한다.
+    <ul>
+      <li>상위 프로토콜인 TCP와 UDP를 사용한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>TCP는 데이터의 분실, 중복, 순서가 뒤바뀜 등을 자동으로 보정해줘서 송수신 데이터의 정확한 전달을 할 수 있도록 해주고,</li>
+  <li>UDP는 IP가 제공하는 정도의 수준만을 제공한다. TCP와 다르게 에러가 날 수도 있고, 재전송이나 순서가 뒤바뀔 수도 있어 이 경우에는 어플리케이션에서 처리하는 번거로움이 존재한다.</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</h1>
+
+<p>네트워크 상에서 확실한 데이터 전송을 보장하므로 데이터의 신뢰성이 보장된다. <br /></p>
+
+<h3 id="특징">특징</h3>
+
+<ol>
+  <li>
+    <p>연결지향적 프로토콜 (Connection-Oriented)</p>
+
+    <ul>
+      <li>TCP를 사용하는 두 어플리케이션이 데이터 교환하기 전에 Connection 되어야 한다.</li>
+      <li>클라이언트와 서버가 연결된 상태에서 데이터를 주고 받음</li>
+    </ul>
+
+    <details>
+<summary><b>연결 초기화 : 3way handshaking </b></summary>
+<div>
+
+        <ul>
+          <li>A(클라이언트)가 B(서버)에 접속을 요청하는 <code class="language-plaintext highlighter-rouge">STN</code> 패킷 전송. ==&gt; A는 응답을 기다리는 상태 (SYN-SENT)</li>
+          <li>B는 <code class="language-plaintext highlighter-rouge">SYN</code>을 받고 요청을 수락하는 <code class="language-plaintext highlighter-rouge">ACK</code>와 <code class="language-plaintext highlighter-rouge">SYN flag</code>를 보냄. ==&gt; B는 응답 기다림 (SYN-RECEIVED)</li>
+          <li>A는 B에게 <code class="language-plaintext highlighter-rouge">ACK</code> 보냄</li>
+        </ul>
+
+      </div></details>
+  </li>
+</ol>
+<p>&lt;/div&gt;
+  &lt;/details&gt;</p>
+
+<p><br /></p>
+
+<details>
+   <summary><b>연결 해제 : 4-way handshaking </b></summary>
+   <div>
+
+    <ul>
+      <li>A가 연결 종료하겠다는 <code class="language-plaintext highlighter-rouge">FIN</code> 전송</li>
+      <li>B는 확인 <code class="language-plaintext highlighter-rouge">ACK</code> 전송하고, 자신의 전송이 끝날 때 까지 기다림 ==&gt; TIME-WAIT</li>
+      <li>B가 통신이 끝나면 연결 종료되었다고 <code class="language-plaintext highlighter-rouge">FIN</code> 전송</li>
+      <li>A는 B에게 <code class="language-plaintext highlighter-rouge">ACK</code> 전송</li>
+    </ul>
+
+    <p><br /></p>
+
+  </div>
+  </details>
+
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>신뢰성 (Reliability)</p>
+
+    <ul>
+      <li>전송한 데이터가 올바르게 도착했는지 확인해 신뢰성을 보장</li>
+    </ul>
+
+    <details>
+<summary><b>데이터 전송 과정 </b></summary>
+<div>
+
+        <ul>
+          <li>데이터를 전송하기 위한 <code class="language-plaintext highlighter-rouge">최적의 크기</code>로 나눈다.</li>
+          <li>TCP가 세그먼트를 보낼 때 <code class="language-plaintext highlighter-rouge">타이머</code>를 유지하고, 수신측으로부터 <code class="language-plaintext highlighter-rouge">세그먼트에 대한 응답</code>을 기다리다가, 시간 내 수신되지 않으면 재전송한다.</li>
+          <li>TCP가 수신측으로 데이터를 받으면 <code class="language-plaintext highlighter-rouge">ACK</code>를 보낸다.</li>
+          <li>TCP는 전송 중 데이터의 변화를 발견하기 위해 헤더와 데이터에 <code class="language-plaintext highlighter-rouge">check-sum</code>을 유지한다. 만약 잘못된 <code class="language-plaintext highlighter-rouge">체크섬</code>을 가지고 도달하면 TCP는 <code class="language-plaintext highlighter-rouge">ACK</code>를 보내지 않게되고 그러면 송신측이 재전송하게 된다.</li>
+          <li>TCP 세그먼트는 순서에 관계없이 도착되므로, 수신하는 TCP는 전송된 데이터를 다시 순서대로 해서 어플리케이션에 정확한 순서로 보낸다.</li>
+        </ul>
+
+        <p><br /></p>
+
+        <blockquote>
+          <p>여기서 잠깐!</p>
+
+          <p><code class="language-plaintext highlighter-rouge">타이머</code>란 ? 패킷을 전송할 때 TCP는 패킷이 어떻게 전달되는지, 심지어 잘 전달 되는지 알 수 없다. 따라서 응답이 올 때까지 얼마나 기다려야 할지 알 수 없다. 따라서 적절한 타임 아웃을 잡아 해당 시간 내에 ACK를 받지 못하면 데이터를 재전송 하도록 한다.</p>
+
+          <p>타임 아웃은 일반적으로 (패킷이 목적지까지 가는 시간 + 응답이 되돌아 오는 시간)을 고려해서 전한다.</p>
+        </blockquote>
+
+        <p><br /></p>
+
+        <blockquote>
+          <p>여기서 잠깐!</p>
+
+          <p><code class="language-plaintext highlighter-rouge">Check-sum</code> 이란? 송신측에서 계산해 저장된 값을 수신측에서 검사해 에러를 검사하기 위한 필드입니다.</p>
+        </blockquote>
+
+        <p><br /></p>
+
+      </div></details>
+  </li>
+</ol>
+<p>&lt;/div&gt;
+  &lt;/details&gt;</p>
+
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>흐름 제어 (Flow Contorl)</p>
+
+    <ul>
+      <li>송신측과 수신측의 데이터 처리 속도차이를 해결하기 위한 기법</li>
+      <li>
+        <p>수신측 처리 속도 &gt; 송신측 처리속도 일 때는 문제 없음</p>
+      </li>
+      <li>수신자의 버퍼 오버플로우 방지용으로, 수신자가 송신자에게 자신의 상태를 feedback 합니다.</li>
+      <li>수신자는 <code class="language-plaintext highlighter-rouge">윈도우 크기</code> 값으로 수신량을 정하고, 송신하는 TCP가 수신측이 가지고 있는 버퍼의 크기만큼만 데이터를 보내도록 제어</li>
+    </ul>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>혼잡 제어 (Congestion Control)</p>
+
+    <ul>
+      <li>송신측의 데이터 전달과 네트워크 처리 속도 차이를 해결하기 위한 기법</li>
+      <li>네트워크 내 존재하는 패킷의 수가 과도하게 증가되는 것을 혼잡(congestion)이라고 하는데, 혼잡이 발생하면 네트워크 전체의 속도가 급격하게 감소한다.
+        <ul>
+          <li>한 라우터에 데어터가 몰리면 자신에게 온 데이터를 모두 처리할 수 없고 그렇게 손실된 정보는 다시 재전송 되어야 합니다. 이렇게 혼잡이 가중됩니다.</li>
+        </ul>
+      </li>
+      <li>네트워크 내의 패킷 수가 넘치지 않도록 <code class="language-plaintext highlighter-rouge">slow-start 알고리즘</code>을 이용함.
+        <ul>
+          <li>처음부터 윈도우 최대 크기로 보내지 않고 윈도우 크기를 조정해 가면서 전송하는 방식</li>
+        </ul>
+      </li>
+      <li>TCP Taho, TCP Reno, TCP Vegas - <a href="https://ko.wikipedia.org/wiki/TCP_%ED%98%BC%EC%9E%A1_%EB%B0%A9%EC%A7%80_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">혼잡 방지 알고리즘</a></li>
+    </ul>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>UDP보다 느리다.</p>
+  </li>
+</ol>
+
+<p><br /><br /></p>
+
+<h3 id="tcp-header">TCP Header</h3>
+
+<p><img src="/assets/img/posts/cs/net/3-2_tcp_header.png" alt="TCP_vs_UDP_03.jpeg" /></p>
+
+<ul>
+  <li>포트번호(Port Number) : 송신하고 수신하는 응용을 구분하기 위해 사용.</li>
+  <li>순서번호(Sequence Number) : 전송되는 데이터의 모든 바이트에는 고유한 일련 번호 부여됨. <strong>분실, 지연으로 순서가 어긋날 수 있기 때문에 이를 방지하고자 사용</strong>함.</li>
+  <li>확인 응답 번호(Acknowledgement Number) : 다음 세그먼트를 수신할 준비가 되었다는 사실을 알리는 값.
+    <ul>
+      <li>이전의 모든 데이터가 수신되었다는 묵시적인 확인 메시지.</li>
+      <li>다음 보낼 패킷의 순서번호를 의미</li>
+    </ul>
+  </li>
+  <li>6개의 플래그 비트 : URG, ACK, PSH, RST, SYN, FIN의 6비트로 이루어진다.
+    <ul>
+      <li>URG : Urgent Pointer 필드가 가리키는 세그먼트 번호까지 긴급 데이터가 포함되었다는 것을 의미. 이 플래그가 설정 안되어있다면 무시하면 됨.</li>
+      <li>ACK : 확인 응답 번호</li>
+      <li>PSH : 데이터를 가능한 빨리 응용계층으로 보낸다. 즉, 수신후에 버퍼가 다 찰때까지 기다리지 않고 받는대로 응용 계층으로 올린다.</li>
+      <li>RST : 연결을 재설정. (수신 거부)</li>
+      <li>SYN : 연결을 초기화하기 위해 순서번호 동기화</li>
+      <li>FIN : 작업이 끝나고 가상 회선 종결하고자 할 때</li>
+    </ul>
+  </li>
+  <li>체크 섬(Checksum) : TCP 세그먼트의 내용이 유효한지 검증하고 손상 여부를 검사함.</li>
+  <li>긴급 포인터(Urgent Pointer) : URG 플래그가 설정되었을 때만 유효한 값을 가짐.</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="udp">UDP</h1>
+
+<ul>
+  <li>TCP와 달리 데이터그램이 목적지에 제대로 도달하는지에 대한 신뢰성을 제공하지 않음
+    <ul>
+      <li>세그먼트가 손실될 수 있고, 순서가 뒤바뀔 수 있다.</li>
+      <li>의미있는 서버를 구축하기 위해서는 일일이 패킷을 관리해주어야 한다.</li>
+    </ul>
+  </li>
+  <li>실시간이 중요한 스트리밍 멀티미디어와 같은 응용프로그램, 도메인 네임 서버(DNS) 및 SNMP에 이용되어진다</li>
+  <li>DNS, IPTV, VoIP, TFTP, IP터널, 온라인게임 등</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="특징-1">특징</h3>
+
+<ol>
+  <li>
+    <p>비연결성 (Connectionless)</p>
+
+    <ul>
+      <li>UDP는 연결 설정 없이 데이터를 전송한다. (연결을 위해 할당되는 논리적 경로가 없다.)</li>
+      <li>추가 시간이 걸리지 않아 빠른 서비스 제공이 가능하다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>비상태정보 (Non-State)</p>
+
+    <p>연결 정보나 여러 가지 인자에 대한 상태 정보를 저장하지 않는다.</p>
+  </li>
+  <li>
+    <p>경량의 오버헤드 (Small Overhead)</p>
+
+    <p>TCP 세그먼트의 헤더는 20바이트인데, UDP 헤더는 8바이트</p>
+  </li>
+  <li>
+    <p>비정규적인 송신률 (Unregulated Send Rate)</p>
+
+    <p>TCP의 <code class="language-plaintext highlighter-rouge">혼잡제어</code> 매커니즘은 송신측에서 보내는 데이터의 양에 제한을 둔다. 따라서 일부 패킷의 손실이 생겨도 최소 전송률을 요구하는 실시간 전송의 경우 UDP를 사용하는 것이 바람직하다.</p>
+  </li>
+  <li>
+    <p>최신형 서비스 (Best Effort)</p>
+
+    <ul>
+      <li>
+        <p>TCP와 달리 응답 기다리지 않고 바로 원하는 서비스를 제공한다.</p>
+      </li>
+      <li>
+        <p>패킷 손실이 유발될 가능성도 있으나 서비스 지연이 없다.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /><br /></p>
+
+<h3 id="udp-header">UDP Header</h3>
+
+<p><img src="/assets/img/posts/cs/net/3-2_udp_header.png" alt="TCP_vs_UDP_03.jpeg" /></p>
+
+<p><br /><br /></p>
+
+<h1 id="tcp-vs-udp">TCP vs UDP</h1>
+
+<h4 id="공통점">공통점</h4>
+
+<ul>
+  <li>포트 번호 이용하여 주소 지정</li>
+  <li>Checksum 이용하여 데이터 오류 검사</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>TCP</th>
+      <th>UDP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>연결 방식</td>
+      <td>연결</td>
+      <td>비연결</td>
+    </tr>
+    <tr>
+      <td>패킷 교환 방식</td>
+      <td>가상 회선</td>
+      <td>데이터그램</td>
+    </tr>
+    <tr>
+      <td>전송 순서</td>
+      <td>보장</td>
+      <td>바뀔 수 있음</td>
+    </tr>
+    <tr>
+      <td>수신 여부</td>
+      <td>확인</td>
+      <td>비확인</td>
+    </tr>
+    <tr>
+      <td>통신 방식</td>
+      <td>1:1</td>
+      <td>1:1 or 1:N or N:N</td>
+    </tr>
+    <tr>
+      <td>신뢰성</td>
+      <td>높음</td>
+      <td>낮음</td>
+    </tr>
+    <tr>
+      <td>속도</td>
+      <td>느림</td>
+      <td>빠름</td>
+    </tr>
+    <tr>
+      <td>혼잡제어</td>
+      <td>O</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>흐름제어</td>
+      <td>O</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Streaming 서비스</td>
+      <td>불리</td>
+      <td>유리</td>
+    </tr>
+    <tr>
+      <td>전성 단위 (packet)</td>
+      <td>Segment</td>
+      <td>Datagram</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /><br /></p>
+
+<h1 id="quic">QUIC</h1>
+
+<ul>
+  <li>구글이 개발한 프로토콜로 2014년부터 구글 서비스에 배포를 시작</li>
+  <li>TCP의 성능을 개선하고자 UDP를 채택한 기술</li>
+  <li>전달 속도 개선과 대역폭(bandwidth)를 예상해 패킷 혼잡을 피하는 것이 주요 특징</li>
+  <li>구글 검색에서 3%로딩 시간 개선, 유튜브 30% 버퍼링 감소</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="특징-2">특징</h4>
+
+<ol>
+  <li>0-RTT 연결 설정
+    <ul>
+      <li>알려진 서버에 대한 연결은 0-RTT로 설정</li>
+      <li>새로운 암호화 키 교환 또는 버전 협상의 경우에만 설정 시간을 증가함</li>
+    </ul>
+  </li>
+  <li>스트림 멀티 플렉싱
+    <ul>
+      <li>UDP를 통해 QUIC 스트림을 다중화해 <strong>HOL 블로킹 문제 극복</strong>
+        <ul>
+          <li>HoL (Head-Of-Line) 블로킹 : 앞선 데이터가 전송에 실패하였을 때, 뒤의 데이터가 앞의 데이터가 다시 보내지는 것을 기다리게 되는 것</li>
+        </ul>
+      </li>
+      <li>각 스트림에서만 순서 보장함</li>
+    </ul>
+  </li>
+  <li>흐름 제어
+    <ul>
+      <li>수신자는 발신자가 스트림당 보낼 수 있는 총 바이트 수 지정</li>
+    </ul>
+  </li>
+  <li>혼잡 제어</li>
+  <li>연결 마이그레이션
+    <ul>
+      <li>클라이언트 IP 주소 변경 시에도 연결 유지</li>
+      <li>Wi-Fi와 셀룰러 간 전환 시 연결 유지</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/posts/cs/net/3-2_QUIC.png" alt="TCP_vs_UDP_01.jpeg" /></p>
+
+<p><br /><br /></p>
+
+<hr />
+
+<h1 id="예상-질문">예상 질문</h1>
+
+<h3 id="전송-계층">전송 계층</h3>
+
+<h4 id="osi의-4계층인-전송-계층은-어떤-역할을-갖나요">OSI의 4계층인 전송 계층은 어떤 역할을 갖나요?</h4>
+
+<p>전송 계층은 송신자와 수신자를 연결하는 통신 서비스 제공합니다.</p>
+
+<p>송신 호스트는 데이터 메시지를 세그먼트로 분해하여 네트워크 계층(3계층)으로 전송하고, 수신 호스트는 세그먼트들을 데이터 메시지로 재조립하여 응용 계층으로 전송합니다.</p>
+
+<p>전송 계층은 데이터가 제대로 도착했는지, 오류는 없는지 확인하는 역할을 담당합니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="tcp">TCP</h3>
+
+<h4 id="tcp란-무엇인가요-특징은-어떤게-있나요">TCP란 무엇인가요? 특징은 어떤게 있나요?</h4>
+
+<p>TCP는 Transmission Control Protocol의 약자로 네트워크 상에서 데이터를 신뢰성 있게 전달하기 위해 만들어진 프로토콜입니다.</p>
+
+<p>특징으로는 데이터 전송을 위하 서버와 클라이언트가 연결을 설정해야 한다는 것, 데이터 전달에 신뢰성을 보장하는 것, 그리고 네트워크 상의 혼잡 제어를 제공하는 것 등이 있습니다.</p>
+
+<p><br /></p>
+
+<h4 id="tcp가-데이터-전송의-신뢰성을-보장한다고-했는데-어떻게-신뢰성을-보장하나요">TCP가 데이터 전송의 신뢰성을 보장한다고 했는데, 어떻게 신뢰성을 보장하나요?</h4>
+
+<p>우선 데이터 전송의 신뢰성을 두 가지 측면으로 나눌 수 있을 것 같습니다. 하나는 데이터가 잘 전송 되느냐 하는 관점이고 하나는 데이터가 손실되지 않고, 즉 오류 없이 전달 되었느냐는 관점입니다.</p>
+
+<p>먼저 전송의 관점에서는 sequence 번호를 넣어 순서를 갖게 하고, ACK를 통해 받았는지 확인하며, Time-out 장치를 이용해 신뢰성을 높일 수 있습니다.</p>
+
+<p>데이터의 오류의 관점에서는 TCP 헤더에 check-sum을 두어 수신측에서 수신한 데이터가 제대로 도착했는지 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h4 id="ack를-사용하는-방법으로-데이터-전송의-신뢰성을-보장할-수-있음은-알겠습니다-그런데-데이터를-보낼-때마다-ack를-보내면-속도가-늦어질-것-같은데-어떻게-개선할-수-있을까요">ACK를 사용하는 방법으로 데이터 전송의 신뢰성을 보장할 수 있음은 알겠습니다. 그런데 데이터를 보낼 때마다 ACK를 보내면 속도가 늦어질 것 같은데 어떻게 개선할 수 있을까요?</h4>
+
+<ul>
+  <li>
+    <p>모든 패킷에 대해 ACK를 보내지 않고 누적해서 ACK를 보내는 방법이 있을 수 있습니다.</p>
+  </li>
+  <li>
+    <p>또 ACK 패킷의 낭비를 최소화 하기 위해 ACK에 데이터를 실어서 보낼 수도 있습니다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="흐름-제어는-어떤-상황에서-사용되나요-그리고-그-방법은-무엇인가요">흐름 제어는 어떤 상황에서 사용되나요? 그리고 그 방법은 무엇인가요?</h4>
+
+<p>흐름 제어는 수신측의 처리 속도가 송신측의 처리 속도보다 느리면 수신측의 버퍼 오버플로우가 발생하므로 이를 방지하기 위해 필요합니다.</p>
+
+<p>수신측은 ACK를 보낼 때 TCP 헤더에 window size를 보내고, 송신측은 이 크기만큼 수신량을 정해 전달하는 방법으로 해결할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h4 id="혼잡-제어는-어떤-상황에서-사용되나요-그리고-그-방법은-무엇인가요">혼잡 제어는 어떤 상황에서 사용되나요? 그리고 그 방법은 무엇인가요?</h4>
+
+<p>혼잡 제어는 네트워크 상 데이터의 양이 라우터가 처리할 수 있는 양을 초과해 처리하지 못하게 되어 데이터가 손실되고, 이 때문에 재전송이 계속 발생하게 되면서 네트워크가 혼잡해지는 것을 방지하기 위해 필요합니다.</p>
+
+<p>송신 측에서 전송 속도를 적절히 조절해서 예방할 수 있는데, 이를 혼잡 제어라고 합니다.</p>
+
+<p>혼잡 제어의 다양한 기법들이 있는데, 제가 아는 한 가지 방법은 처음 패킷을 보냈을 때 문제가 없으면 윈도우 크기를 2배씩 증가시키며 전송하고, 실패하면 윈도우 크기를 1로 다시 줄이는 slow start 방법이 있습니다.</p>
+
+<p><br /></p>
+
+<h4 id="tcp가-가상-회선-방식을-제공한다는-것의-의미는">TCP가 가상 회선 방식을 제공한다는 것의 의미는?</h4>
+
+<p>발신지와 수신지를 연결해 패킷을 전송하기 위한 논리적 경로를 배정한다는 뜻이다.</p>
+
+<p>데이터를 보내기 위한 경로배정(라우팅)을 효율적으로 하기 위해 패킷으로 나누고, 패킷 번호를 붙인 다음 같은 목적지인 IP 계층으로 전송합니다.</p>
+
+<p><br /><br /></p>
+
+<h3 id="tcp-header-1">TCP Header</h3>
+
+<h4 id="check-sum이란-무엇이고-어떻게-오류를-확인하나요">Check-sum이란 무엇이고 어떻게 오류를 확인하나요?</h4>
+
+<p>TCP 세그먼트 송신 도중 발생 될 수 있는 비트 오류를 검출하기 위해 사용합니다. 송신자는 체크섬 계산 알고리즘으로 체크섬을 계산해서 보내고, 수신자는 동일한 알고리즘으로 검사해봄으로써 오류 여부를 판단할 수 있습니다.</p>
+
+<p><br /></p>
+
+<p>체크섬 계산 예시 : TCP 세그먼트를 4바이트 단위로 나눈 후, 각각을 합해서 더한 후 1의 보수를 취해 전달</p>
+
+<p><br /></p>
+
+<h3 id="udp-1">UDP</h3>
+
+<h4 id="udp를-사용해야-하는-경우는-언제일까요">UDP를 사용해야 하는 경우는 언제일까요?</h4>
+
+<p>UDP의 최대 장점은 처리 속도가 빠르다는 것입니다. 따라서 주로 실시간 방송과 온라인 게임에서 많이 사용됩니다.</p>
+
+<ul>
+  <li>DNS나 NMS처럼 TCP처럼 연결을 해서 진행하면 속도의 문제가 발생할 때와</li>
+  <li>Real-time protocol 처럼 재전송을 하면 안되는 서비스에서 UDP를 사용해야 합니다.</li>
+  <li>또는 1:N으로 통신하는 멀티캐스트 서비스에서는 한 사람이 데이터를 못받았다고 재전송 요청을 하면 나머지 다른 사람들도 다시 데이터를 받아 처리해야 하므로 문제가 발생할 수 있습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="dns는-신뢰성이-보장되어야-할-것-같은데-왜-udp를-사용하나요">DNS는 신뢰성이 보장되어야 할 것 같은데 왜 UDP를 사용하나요?</h4>
+
+<p>DNS 요청은 UDP 세그먼트에 들어갈 정도로 작고, 연결 과정이 필요없어 속도 면에서 유용합니다.</p>
+
+<p>신뢰성은 DNS 응용 층에 추가할 수 있습니다.</p>
+
+<p><br /><br /><br /></p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>
+    <p><a href="https://tksgk2598.tistory.com/66">ACK time out</a></p>
+  </li>
+  <li>
+    <p><a href="https://steady-coding.tistory.com/507">흐름제어 &amp; 혼잡제어</a></p>
+  </li>
+  <li>
+    <p><a href="https://nogan.tistory.com/21">checksum</a></p>
+  </li>
+  <li>
+    <p><a href="https://goodgid.github.io/TCP-UDP/">TCP-UDP</a></p>
+  </li>
+  <li><a href="http://blog.skby.net/quic-quick-udp-internet-connection/">QUIC</a></li>
+  <li>
+    <p><a href="https://www.secmem.org/blog/2022/01/03/quic/">QUIC</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Network/UDP.md#20190826%EC%9B%94-bym-udp%EB%9E%80">tech-interview-for-developer/UDP</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Network/TCP%20(%ED%9D%90%EB%A6%84%EC%A0%9C%EC%96%B4%ED%98%BC%EC%9E%A1%EC%A0%9C%EC%96%B4).md#tcp-%ED%9D%90%EB%A6%84%EC%A0%9C%EC%96%B4%ED%98%BC%EC%9E%A1%EC%A0%9C%EC%96%B4">tech-interview-for-developer/흐름제어&amp;혼잡제어</a></p>
+  </li>
+  <li>https://daengsik.tistory.com/30</li>
+</ul>
+
+    </div>
+</article>
+
+    
+    <footer class="footer">
+        <section class="footer__about">
+                <p class="footer__about__copyright">Pino 2022</p>
+                
+                <span class="divider">·</span>
+                
+                <span class="footer__about__theme">
+                <p>by <a href="https://songhee-lee.github.io">songhee</a></p></span>
+        </section>
+</footer>
+    
+    <script src="/assets/js/jquery.slim.min.js"></script>
+<script src="/assets/js/lity.min.js"></script>
+<script src="/assets/js/tools.js"></script>
+</body>
+</html>
