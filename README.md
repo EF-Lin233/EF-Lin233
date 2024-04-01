@@ -1,70 +1,32 @@
 ### GITHUB BLOG 
 
-1. Ruby 설치 (v2.7.4)
+1. 下载 Ruby
 
-2. Jekyll Bundler 설치
-
-   ```bash
-   gem install jekyll bundler
-   ```
-
-3. Github Repository 만들기
-
-4. Jekyll Themes 다운로드 후 레포에 넣기
-
-5. 번들 설치
+2. cd到blog本地仓库后 用 Jekyll Bundler
 
    ```bash
-   bundle install
+   bundle exec jekyll serve -P 5555 --watch
    ```
 
-6. (TEST) 로컬 호스트로 실행
+3. Github 创建 Repository 
+   上传到github， 先打开gitbash cd 到仓库,需要先查看一下$git remote -v$远程仓库匹不匹配
+
+4. 基本流程
 
    ```bash
-   bundle exec jekyll serve
+   git init
+   git add .
+   git commit -m "xxx"
+   git push -u origin master
    ```
-
-   - http://localhost:4000
-
-<br><br>
 
 #### Jekyll Build error
 
-```bash
-github-pages 227 | Error: The jekyll-theme-simplex theme could not be found.
-```
-- local 에서 사용할 때는 theme 사용
-- 배포할 때는 `_config.yml` 에서 theme 주석처리하고, remote_theme 추가</br>
-  
+可能报一些奇奇怪怪的错,例如git commit 时要先确定
 
 ```bash
-github-pages 227 | Error:  Could not find document '{{ page.nextPart }}' in tag 'link'.
+git config --global user.email "usr@email.com"
+git config --global user.name "usr"
 ```
-- local 에서는 `_layout/post.html` 내의 link tag 이용
-- 배포할 때는 link tag 제거
-
-<br><br><br>
-
-
-### SETTING
-
-#### Category 추가
-- `_category` 폴더에 `.md` 파일 생성
-- `_data/nav.yaml` 수정
-
-<br><br><br>
-
-
-### TO DO
-- Author photo
-
-  ```
-  _author/jeykll.md
-  ```
-<br>
-
-- Category logo
-  - `_category` 내 `hue` 수정
-  - `_data/nav.yaml` 수정
 
   
