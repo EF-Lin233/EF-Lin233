@@ -18,10 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: pino's blog
-email: songhee172@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Enjoy the progress
+title: 纯真BOY DON'T SMOKE IS ON THE TRACK
+email: littleeeef@qq.com
+description: >- # this means to keep(ignore >-) newlines until "baseurl:"
+    虽说好记性不如烂笔头，但是翻笔记太麻烦了，而且很多时候不记得记到哪一页了，于是决定在blog上写点小抄。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -51,8 +51,8 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-logo_img: #Absolute path to the logo. If not specified, the title will be displayed instead.
-copyright: Pino 2022 #Your copyright.
+logo_img: /assets/img/icons/eef.svg #Absolute path to the logo. If not specified, the title will be displayed instead.
+copyright: EEF 2024 #Your copyright.
 
 # Defaults
 collections:

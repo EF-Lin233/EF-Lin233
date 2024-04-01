@@ -1,5 +1,5 @@
 ---
-nick: pino #Author's nick.
-full_name: Songhee Lee #Author's full name.
-photo_dir: assets/img/authors/jekyll.png #Path to the author's pic.
+nick: eef #Author's nick.
+full_name: EEF Lin #Author's full name.
+photo_dir: assets/img/authors/eef.png #Path to the author's pic.
 ---
