@@ -50,5 +50,7 @@
 
 <head>
     <meta charset="utf-8">
-    {% include latex.html %}
+    {% unless page.no_latex %}
+        {% include latex.html %}
+    {% endunless %}
 </head>
