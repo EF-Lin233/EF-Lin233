@@ -108,10 +108,10 @@ int getKthAncestor(int node, int k) {
   int cnt = 32 - __builtin_clz(k);
   if(cnt==0) return node;
   cnt--;
-  while(k){
+  while(cnt>=0){ // k // 也可以这么做
       if(k&(1 << cnt)){
           node = pa[node][cnt];
-          k -= 1 << cnt; // 每次循环去掉k的最高位。最高位为1，减去1 << cnt,为0不做处理
+          // k -= 1 << cnt; // 每次循环去掉k的最高位。最高位为1，减去1 << cnt,为0不做处理
           if(node==-1) break;
       }
       cnt--;
