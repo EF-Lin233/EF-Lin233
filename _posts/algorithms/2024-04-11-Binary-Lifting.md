@@ -123,3 +123,42 @@ int getKthAncestor(int node, int k) {
 ## Lowest Common Ancestor
 
 在倍增法的基础上，我们来探讨下最近公共祖先问题。假设现在有一棵多叉树如下所示。
+
+<a href="/assets/img/posts/bst.png" data-lity class="sx-center">
+  <img src="/assets/img/posts/bst.png"/>
+</a>
+
+（这里的二叉搜索树只是为了方便举例的一种特殊情况）假设我们现在要求这棵树上某两个节点的最近公共祖先，如4和13的最近公共祖先是8；1和6的最近公共祖先是3；13和10的最近公共祖先是10。
+
+为了方便描述，我们先设定几个符号：
+
+- 节点x的深度为d[x]
+- 节点x的父节点为p[x]
+
+不难推出，假设y为x的第n个祖先，有d[x]=d[y]+n。所以我们可以用DFS或BFS先预处理一遍得到d[n]数组，在由节点间的深度关系求解LCA问题。
+
+- 假设现在有两个不同的节点u、v，d[u]>d[v]，我们先让u向上层移动，直到d[u]-d[v]。(调用前面的getKthAncestor(u, d[u]-d[v]))
+- 然后令u和v同时向上移动，每移动一轮都检查u和v是否重合，当u、v首次重合时便是我们想要求的LCA。
+
+如果每一轮都只将u和v向上移动一步，操作的时间复杂度是`O(n)`，为了减小时间复杂度，我们可以再用二分法。假设将u移动到v的同层后，d[v]=d[u]=D，LCA的深度要小于D，即$d[LCA]\in [0, D)$。现在的操作为：
+
+- 令$t = \lfloor log_2 D \rfloor$，i的初值为t
+- 每轮比较pa[u][i]与pa[v][i]是否相同（u的第$2^i$个祖先节点与v的第$2^i$个祖先节点是否相同），如果相同说明u和v最近的公共祖先应该是pa[u][i]或它的子节点，即d[LCA]>=d[pa[u][i]];如果不同，则说明u和v最近的公共祖先还在第$2^i$个祖先节点之前，d[LCA]< d[pa[u][i]],我们要让u和v向上移动$2^i$次 (u = pa[u][i], v = pa[v][i])
+- 重复这个操作，直到遍历完i = t, ... , 0。u和v的最近公共节点就是u和v的父节点。
+
+```cpp
+int lca(int u, int v, vector<vector<int>>pa, vector<int>depth){
+    if(depth[u]<depth[v]) swap(u,v);
+    u = getKthAncestor(u, depth[u]-depth[v]);
+    if(u==v) return v;
+    int t = 32 - __builtin_clz(depth[u]);
+    t--;
+    while(t>=0){
+        if(pa[u][t]!=pa[v][t]){
+            u = pa[u][t];
+            v = pa[v][t];
+        }
+    }
+    return pa[u][0]; // 返回u、v的父节点
+}
+```
