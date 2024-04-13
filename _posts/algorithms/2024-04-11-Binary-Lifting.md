@@ -5,7 +5,7 @@ title:  "Binary Lifting  倍增法压缩空间规模"
 date:   2024-04-11 21:29:00 +0800
 author: eef #Author's nick.
 #nextPart: _posts/2021-01-30-example.md #Next part.
-prevPart: _posts/os/2024-04-01-Basic-Linux-Operations.md #Previous part.
+prevPart: /_posts/os/2024-04-01-Basic-Linux-Operations.md #Previous part.
 #og_image: assets/example.png #Open Graph preview image.
 og_description: "使线性的处理转化为对数级的处理，大大地优化时间复杂度" #Open Graph description.
 fb_app_id: example
